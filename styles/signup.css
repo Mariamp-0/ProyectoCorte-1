@@ -1,0 +1,75 @@
+.container{
+    font-family: "Montserrat";
+    display: flex;
+
+
+}
+h2{
+    padding-bottom: 30px;
+}
+.formulario{
+    padding-top: 30px;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5%;
+    padding-bottom: 20px;
+    background-color: whi;
+    text-align: center;
+}
+.left-side{
+    padding-top: 25px;
+    width: 50%;
+
+
+}
+.campos{
+    padding-bottom: 20px;
+}
+.campos input{
+    width: 60%;
+    padding: 17px;
+    border-radius: 15px;
+    border: 1px solid #ccc;
+    outline: none;
+    border: none;
+    background-color: #EDF2F2;
+    font: bold 15px Montserrat;
+}
+
+.accept-terms {
+    padding-left: 115px;
+    text-align: left;
+    font-family: Montserrat;
+    border-radius: 15px;
+}
+.btn{
+    padding-top: 20px;
+}
+.signup-btn{
+    border: none;
+    font-size: 17px;
+    background-color: #A1EFBF;
+    border-radius: 15px;
+    height: 50px;
+    width: 60%;
+    color: black;
+    font-family: Montserrat;
+}
+
+.signup-btn:hover{
+    border: none;
+    font-size: 17px;
+    background-color: #82ce9f;
+    border-radius: 15px;
+    height: 50px;
+    width: 60%;
+    color: black;
+    font-family: Montserrat;
+}
+#terms{
+    color: #8A0A14;
+}
+#login{
+    color: #8A0A14;
+    text-decoration:none;
+}
