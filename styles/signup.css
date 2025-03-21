@@ -4,8 +4,22 @@
 
 
 }
-h2{
+#logo{
+    width: 10%;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
+h1{
     padding-bottom: 30px;
+}
+.right-side{
+    width: 50%;
+}
+#imagen{
+    height: 80%;
+    max-width: 100%;
+    object-fit: cover;
 }
 .formulario{
     padding-top: 30px;
