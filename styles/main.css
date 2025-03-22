@@ -1,4 +1,51 @@
 body{
-    background-image: url("../assets/main/banner-main.jpg");
-    background-size: cover;
+    /*background-image: url("../assets/main/banner-main.jpg");
+    background-size: cover;*/
+    font-family: "Montserrat";
+}
+.logo{
+    width: 12%;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
+.menu{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    
+}
+.menu li a{
+    text-decoration: none;
+}
+.menu ul li input{
+    padding: 8px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+}
+.user{
+    width: 25%;
+    border-radius: 50%;
+}
+.menu ul{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 40px;
+}
+/*
+.container-banner{
+    width: 100%;
+    display: flex;
+}
+#fondo-banner{
+    width: 100%;
+    height: 580px;
+}
+#venti-banner{
+    width: 50%;
+    position: absolute;
+    top: 15%;
+    left: 5%;
+    
 }

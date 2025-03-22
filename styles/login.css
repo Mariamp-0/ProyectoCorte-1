@@ -8,7 +8,7 @@ body{
     padding-top: 10%;
 }
 img{
-    width: 10%;
+    width: 12%;
     position: absolute;
     top: 30px;
     left: 30px;
@@ -73,6 +73,7 @@ input::placeholder {
     width: 75%;
     color: black;
     font-family: Montserrat;
+    transition: all 0.3s ease;
 }
 .sign-up{
     font-size: 15px;
