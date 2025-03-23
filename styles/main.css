@@ -3,6 +3,12 @@ body{
     background-size: cover;*/
     font-family: "Montserrat";
 }
+header{
+    width: 100%;
+    height: 660px;
+    background-image: url("../assets/main/banner-main.jpg");
+    background-size: cover;
+}
 .logo{
     width: 12%;
     position: absolute;
@@ -17,9 +23,14 @@ body{
 }
 .menu li a{
     text-decoration: none;
+    color: white;
+    font-weight: 500;
 }
 .menu ul li input{
-    padding: 8px;
+    font-family: "Montserrat";
+    outline: none;
+    width: 120%;
+    padding: 7px;
     border-radius: 20px;
     border: 1px solid #ccc;
 }
@@ -33,19 +44,90 @@ body{
     list-style: none;
     gap: 40px;
 }
-/*
+
 .container-banner{
-    width: 100%;
     display: flex;
-}
-#fondo-banner{
     width: 100%;
-    height: 580px;
 }
-#venti-banner{
-    width: 50%;
-    position: absolute;
-    top: 15%;
-    left: 5%;
-    
+.content{
+    width: 60%;
+    padding-top: 10%;
+    align-items: center;
+
+}
+.title{
+    color: white;
+    font-size: 45px;
+    font-style: italic;
+}
+.subtitle{
+    color: white;
+    font-size: 35px;
+    font-weight: 600;
+    font-style: italic;
+    padding-left: 22%;
+}
+.text{
+    color: white;
+    font-size: 20px;
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.buttons{
+    padding-top: 5%;
+    padding-left: 5%;
+}
+.favorite-btn{
+    font-size: 15px;
+    font-family: "Montserrat";
+    width: 33%;
+    padding: 8px; 
+    background-color: #2F7456;
+    border-radius: 25px;
+    border: none;
+    color: white;
+    font-weight: 500;
+}
+.favorite-btn:hover{
+    font-size: 15px;
+    font-family: "Montserrat";
+    width: 33%;
+    padding: 8px; 
+    background-color: #1a4734;
+    border-radius: 25px;
+    border: none;
+    color: white;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgb(165, 163, 163);
+}
+.details-btn{
+    font-size: 15px;
+    font-family: "Montserrat";
+    width: 33%;
+    padding: 8px; 
+    background-color: #C5FDFA;
+    border-radius: 25px;
+    border: none;
+    color: #2F7456;
+    font-weight: 500;
+}
+.details-btn:hover{
+    font-size: 15px;
+    font-family: "Montserrat";
+    width: 33%;
+    padding: 8px; 
+    background-color: #9de4e0;
+    border-radius: 25px;
+    border: none;
+    color: #2F7456;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgb(165, 163, 163);
+}
+.venti{
+    padding-top: 5%;
+    padding-left: 5%;
+    width: 90%;
+
 }
