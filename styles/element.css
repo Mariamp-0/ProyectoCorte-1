@@ -1,4 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
 body {
     font-family:"Montserrat";
     background-color:#FFF9F1;
+    display: flex;
+}
+
+header{
+    width: 100%;
+    height: 40%;
+    background-color:#EDE1BD;
+    padding: 30px 30px;
+}
+
+.logo{
+    width: 12%;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
+
+.menu{
+    display: flex;
+    justify-content: flex-end; 
+}
+
+.menu ul li a{
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+}
+
+.menu ul li input{
+    font-family: "Montserrat";
+    outline: none;
+    width: 100%;
+    padding: 7px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+}
+
+.user{
+    width: 25%;
+    border-radius: 50%;
+}
+
+.menu ul{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 40px;
 }
