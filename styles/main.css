@@ -1,13 +1,18 @@
-body{
+html, body{
     /*background-image: url("../assets/main/banner-main.jpg");
     background-size: cover;*/
     font-family: "Montserrat";
+    padding:0px;
+    margin:0px;
 }
+
+
 header{
     width: 100%;
     height: 660px;
     background-image: url("../assets/main/banner-main.jpg");
     background-size: cover;
+    background-repeat: no-repeat;
 }
 .logo{
     width: 12%;
@@ -17,11 +22,11 @@ header{
 }
 .menu{
     display: flex;
-    align-items: center;
+    
     justify-content: flex-end;
     
 }
-.menu li a{
+.menu ul li a{
     text-decoration: none;
     color: white;
     font-weight: 500;
@@ -29,11 +34,13 @@ header{
 .menu ul li input{
     font-family: "Montserrat";
     outline: none;
-    width: 120%;
+    width: 100%;
     padding: 7px;
     border-radius: 20px;
     border: 1px solid #ccc;
 }
+
+
 .user{
     width: 25%;
     border-radius: 50%;
@@ -54,6 +61,9 @@ header{
     padding-top: 10%;
     align-items: center;
 
+}
+.description-banner{
+    line-height: 0.7;
 }
 .title{
     color: white;
@@ -131,3 +141,55 @@ header{
     width: 90%;
 
 }
+/*CHARACTER SECTION*/
+
+.characters{
+    padding-top: 10%;
+    width: 100%;
+}
+.cards-container{
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding-top: 3%;
+}
+
+.card:nth-child(1){
+    width: 30%;
+    height: 440px;
+    background: linear-gradient(white 20%, #FCD892 80%);
+    border-radius: 50px;
+}
+
+.card:nth-child(2){
+    width: 30%;
+    height: 440px;
+    background: linear-gradient(white 20%, #CBD5E8 80%);
+    border-radius: 50px;
+}
+
+.card:nth-child(3){
+    width: 30%;
+    height: 440px;
+    background: linear-gradient(white 20%, #8BC5D8 80%);
+    border-radius: 50px;
+}
+
+.card-image img{
+    object-fit: cover;
+    width: 100%;
+    height: 350px;
+    border-radius: 50px;
+}
+
+.card-content{
+    text-align: center;
+    line-height: 0.8;
+
+}
+
+
+
+    
+    
+

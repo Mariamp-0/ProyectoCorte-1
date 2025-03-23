@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main</title>
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Alkatra&family=Delius+Unicase:wght@400;700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Preahvihear&family=Rakkas&family=Rowdies:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alkatra&family=Delius+Unicase:wght@400;700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Preahvihear&family=Rakkas&family=Rowdies:wght@300;400;700&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
     <header>
-        <img class="logo" src="../assets/logogenshing.png"/>
+        <img class="logo" src="../assets/logogenshing.png" />
         <nav class="menu">
             <ul>
                 <li>
@@ -27,34 +31,87 @@
                     <button class="sign-out">Sign Out</button>
                 </li>
                 <li>
-                    <img class="user" src="../assets/main/user-avatar.jpg"/>
+                    <img class="user" src="../assets/main/user-avatar.jpg" />
                 </li>
             </ul>
         </nav>
 
         <section class="container-banner">
-                <div>
-                    <img  class="venti" src="../assets/main/Venti-banner.jpg" alt="Venti Character">
-                </div>
+            <div>
+                <img class="venti" src="../assets/main/Venti-banner.jpg" alt="Venti Character">
+            </div>
 
-                <div class="content">
+            <div class="content">
+                <div class="description-banner">
                 <h1 class="title"><span>New character alert</span><br></h1>
                 <p class="subtitle">Venti is here!</p>
-                <p class="text">Get to know Barbatos and add him to your favorite’s collection. 
-                Don’t miss his incredible abilities and make him your new teammate.</p>
+            </div>
+                <p class="text">Get to know Barbatos and add him to your favorite’s collection.
+                    Don’t miss his incredible abilities and make him your new teammate.</p>
                 <div class="buttons">
                     <button type="submit" class="favorite-btn">Add to favorites</button>
                     <button type="submit" class="details-btn">See details</button>
                 </div>
             </div>
         </section>
+    </header>
 
+    <section class="characters">
+        <div class="Category">
+            <h1>Mondstadt</h1>
+            <p>Feeling like a brave knight?<br>
+                Mondstadt characters you may like!</p>
+        </div>
+        
+        <div class="cards-container">
+            <div class="card">
+                <div class="card-image">
+                    <img src="../assets/main/card2-albedo.png" alt="Jean">
+                </div>
+                <div class="card-content">
+                    <h3>Albedo</h3>
+                    <p class="nickname"> "Kreideprinz"</p>
+                </div>        
+                <div class="card-buttons">
+                    <button class="favorite">Add to favorites</button>
+                    <button class="details">See details</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-image">
+                    <img src="../assets/main/kaeya-character.jpeg" alt="Jean">
+                </div>
+                <div class="card-content">
+                    <h3>Kaeya</h3>
+                    <p class="nickname">"Frostwind Swordsman"</p>
+                </div>
+                <div class="card-buttons">
+                    <button class="favorite">Add to favorites</button>
+                    <button class="details">See details</button>
+                </div>
+            </div>
             
-        
-        
-    
-</header>
-    
-    
+            <div class="card">
+                <div class="card-image">
+                    <img src="../assets/main/jean-character.jpeg" alt="Jean">
+                </div>
+                <div class="card-content">
+                    <h3>Jean</h3>
+                    <p class="nickname">"Dandelion Knight"</p>
+                </div>
+                <div class="card-buttons">
+                    <button class="favorite">Add to favorites</button>
+                    <button class="details">See details</button>
+                </div>
+            </div>
+
+
+          
+        </div>
+
+    </section>
+
+
 </body>
+
 </html>
