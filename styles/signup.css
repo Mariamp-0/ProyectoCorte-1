@@ -1,7 +1,16 @@
+html, body{
+    font-family: "Montserrat";
+    padding:0px;
+    margin:0px;
+}
+
 .container{
     font-family: "Montserrat";
     display: flex;
-
+    max-width: 100%;
+    width: 100%;
+    height: 643px;
+    max-height: 643px;
 
 }
 #logo{
@@ -15,6 +24,10 @@ h1{
 }
 .right-side{
     width: 50%;
+    background-image: url("../assets/signup/fondo2-signup.jpg");
+    background-size: cover;
+    background-position: -240px 0;
+
 }
 #imagen{
     height: 80%;
