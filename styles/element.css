@@ -159,15 +159,15 @@ button {
 
 }
 
-.encabezado {
+/*
+.informacion-personaje button {
     display: flex;
-    align-items: baseline;
-    justify-content: baseline;
-}
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
-.boton {
-    display: flex;
 }
+*/
 
 
 
@@ -182,3 +182,23 @@ button {
     border-radius: 40px;
     margin-bottom: 5%;
 }
+.contenedor-abilities img {
+    width: 50%;
+    height: 50%;
+}
+
+/*
+
+.contenedor-abilities {
+    background-color:#EDE1BD ;
+    font-weight: 300;
+    font-size: medium;
+    display: flex;
+    flex-direction: row;
+    border-radius: 50px;
+    width: 500px;
+    height: 400px;
+
+}
+
+*/
