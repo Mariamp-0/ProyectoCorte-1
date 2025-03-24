@@ -244,6 +244,19 @@ header{
     color: #515151;
     font-weight: 500;
 }
+.favorite-card:hover{
+    font-size: 15px;
+    font-family: "Montserrat";
+    width: 40%;
+    padding: 8px; 
+    background-color: #e4c279;
+    border-radius: 25px;
+    border: none;
+    color: #515151;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgb(165, 163, 163);
+}
 .details-card{
     font-size: 15px;
     font-family: "Montserrat";
@@ -254,6 +267,19 @@ header{
     border: none;
     color: #515151;
     font-weight: 500;
+}
+.details-card:hover{
+    font-size: 15px;
+    font-family: "Montserrat";
+    width: 33%;
+    padding: 8px; 
+    background-color: #f1c875;
+    border-radius: 25px;
+    border: none;
+    color: #515151;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgb(165, 163, 163);
 }
 
 /*Characters section 2*/
@@ -378,6 +404,20 @@ header{
     width: 20%;
     padding: 15px; 
     background-color: #FFF8E2;
+    border-radius: 25px;
+    border: none;
+    color: #232222;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgb(165, 163, 163);
+}
+.go-favorites:hover{
+    margin-left: 50px;
+    font-size: 18px;
+    font-family: "Montserrat";
+    width: 20%;
+    padding: 15px; 
+    background-color: #fceec2;
     border-radius: 25px;
     border: none;
     color: #232222;
