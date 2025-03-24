@@ -74,64 +74,121 @@ button {
 
 .introduccion {
     margin: 40px;
-    margin-left: 40px;
+    margin-right: 40px;
     margin-bottom: 10px;
     margin-top: 250px;
     
 }
 
 .introduccion p {
-    margin-top: 30px;
+    margin-top: 40px;
 }
+
 
 .contenedor {
     display: flex;
+    flex-wrap:wrap ;
     color: #232222;
     margin-top: 10px;
 }
 
-.contenedor .fila-superior .personaje1 {
-    background-color: #EDE1BD;
-    width: 430px;
-    height: 480px;
+.fila-superior {
+    display: flex;  
+    justify-content: space-around;  
+    align-items: center; 
+    flex-wrap: nowrap;
+    max-width: 1200x;
+    width: 100%;
+    margin: 0;
+
+}
+
+.personaje {
+    width: 100%;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    text-align: center;
+    background-color: #fdf2d0;
+    width: 340px;
+    height: 440px;
     max-width: 100%;
     margin: 40px;
     border-radius: 50px;
-    
 }
 
-.contenedor .fila-superior .personaje1 .fondo-Img {
+
+.fondo-Img {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+    margin: 0;
     background-color: #F4D99F;
     width: 430px;
     height: 250px;
     max-width: 100%;
-    margin: 40px;
+    margin: 0px 40px;
     border-radius: 50px;
     position: relative;
     right: 40px;
+
 }
 
 .fondo-Img h3 {
-    display: flex;
-    flex-direction: column; 
-    justify-content: center; 
-    align-items: center; 
-    text-align: center; 
-    margin: auto;
-    margin-top: 280px;
-    font-size: xx-large;
+    margin: 0;
+    margin-top: 50px;
+    font-size: x-large;
 
 }
 
 .fondo-Img p {
-
-    display: flex;
-    flex-direction: column; 
-    justify-content: center; 
-    align-items: center; 
-    text-align: center; 
-    margin: auto;
+    margin: 0;
     margin-top: 3px;
     font-size: large;
 }
 
+.fondo-Img button {
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    max-width: 100%;
+    width: 150px;
+    min-height: 40px;
+    margin: auto;
+    margin-top: 20px;
+    color: #515151;
+    background-color: #F4D99F;
+    
+}
+
+.Img-contenedor img{
+    margin: 0;
+    margin-top:180px;
+    width: 80%;
+    
+
+}
+
+.fila-inferior {
+    display: flex;  
+    justify-content: space-around;  
+    align-items: center; 
+    flex-wrap: nowrap;
+    max-width: 1200x;
+    width: 100%;
+    margin: 0;
+}
+
+.explore {
+
+}
+
+.explore p {
+    
+}
+
+.explore button {
+    
+}
