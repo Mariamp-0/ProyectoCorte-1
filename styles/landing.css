@@ -109,6 +109,19 @@ header{
     color: #232222;
     font-weight: 500;
 }
+.join-btn:hover{
+    font-size: 18px;
+    font-family: "Montserrat";
+    width: 25%;
+    padding: 12px; 
+    background-color: #e7c889;
+    border-radius: 25px;
+    border: none;
+    color: #232222;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgb(165, 163, 163);
+}
 .klee-character{
     width: 93%;
 }
