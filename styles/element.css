@@ -104,7 +104,8 @@ button {
 }
 
 .personaje-img{
-    width: 60%;
+    width: 50%;
+    margin-left: 200px;
 }
 .img-personaje {
     width: 85%;
@@ -123,10 +124,17 @@ button {
     border-radius: 40px;
     width: 45%;
     background-color: #C13A21;
-    height: 550px;
+    height: 600px;
+}
+
+.personaje-portrait img {
+    width: 70%;
+    margin: 40px;
+
+
 }
 .informacion-personaje{
-    height: 500px;
+    height: 600px;
     margin-top: 5%;
     margin-right: 2.5%;
     border-radius: 40px;
@@ -135,9 +143,9 @@ button {
 }
 .abilities{
     margin-top: 5%;
-    height: 500px;
+    height: 800px;
     width: 95%;
-    background-image: url("../assets/main/fondo-raiden.jpg");
+    background-image: url("../assets/element/namecard-hutao.jpg");
     background-size: cover;
     margin-left: 2.5%;
     margin-right: 2.5%;
