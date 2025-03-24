@@ -87,19 +87,21 @@ button {
     max-height: 470px;
 
 }
-
-.personaje .personaje-img img {
+.personaje-general{
+    width: 40%;
+}
+.personaje-img img {
     width: 1200px;
     max-width: 100%;
     margin: auto;
 
 }
 
-.personaje .personaje-general p {
+.personaje-general p {
     padding: 20px;
 }
 
-.personaje .personaje-general h1 {
+.personaje-general h1 {
     padding: 0px 20px;
     font-size:50px; 
 }
@@ -118,25 +120,22 @@ button {
 
 .personaje-2 {
     display: flex;
-    flex-wrap: wrap;
-    margin:auto
-
-
-
+    width: 100%;
 }
 
-.personaje-2 .personaje-portrait {
-    color: #C13A21;
-    max-width: 100%;
-
-}
-
-.personaje-2 .personaje-portrait img {
+.personaje-portrait {
     width: 50%;
+    background-color: #C13A21;
+
+}
+
+.personaje-portrait img {
+    width: 10px;
 }
 
 .personaje-2 .informacion-personaje {
-    color: #EDE1BD;
+    background-color: #EDE1BD;
+    color: white;
     width: 50%;
 }
 
