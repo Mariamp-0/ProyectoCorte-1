@@ -140,7 +140,37 @@ button {
     border-radius: 40px;
     width: 55%;
     background-color: #EDE1BD;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
+
+.informacion-personaje .columna-izquierda {
+    width: 300px;
+    height: 400px;
+    font-size: large;
+}
+
+.informacion-personaje .columna-derecha {
+    width: 100px;
+    height: 400px;
+    font-size: large;
+
+}
+
+.encabezado {
+    display: flex;
+    align-items: baseline;
+    justify-content: baseline;
+}
+
+.boton {
+    display: flex;
+}
+
+
+
 .abilities{
     margin-top: 5%;
     height: 800px;
