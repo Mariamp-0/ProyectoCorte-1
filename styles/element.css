@@ -8,15 +8,12 @@
 
 body {
     background-color:#FFF9F1;
-    display: flex;
 }
 
 header{
     width: 100%;
     background-color:#EDE1BD;
     padding: 30px 30px;
-    position: fixed;
-    z-index: 1000;
 }
 
 .logo{
@@ -71,32 +68,21 @@ button {
     padding: 5px;
     margin: 5px;
 }
-
-.personaje {
-    color: white;
+.personaje{
     background-color: #C13A21;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 80px auto 0 auto;
-    margin-top: 200px;
-    width: 100%;
-    max-width: 1200px; 
-    border-radius: 50px;
-    padding: 40px;
-    max-height: 470px;
-
+    height: 450px;
+    margin-top: 5%;
+    margin-left: 2.5%;
+    border-radius: 40px;
+    width: 95%;
 }
 .personaje-general{
+    padding-left: 3%;
+    color: white;
+    padding-top: 12%;
     width: 40%;
 }
-.personaje-img img {
-    width: 1200px;
-    max-width: 100%;
-    margin: auto;
-
-}
-
 .personaje-general p {
     padding: 20px;
 }
@@ -117,26 +103,44 @@ button {
     padding: 3px;
 }
 
+.personaje-img{
+    width: 60%;
+}
+.img-personaje {
+    width: 85%;
 
-.personaje-2 {
-    display: flex;
+}
+/*Personaje 2*/
+
+.container-2{
+    gap: 50px;
     width: 100%;
+    display: flex;
 }
-
 .personaje-portrait {
-    width: 50%;
+    margin-top: 5%;
+    margin-left: 2.5%;
+    border-radius: 40px;
+    width: 45%;
     background-color: #C13A21;
-
+    height: 550px;
 }
-
-.personaje-portrait img {
-    width: 10px;
-}
-
-.personaje-2 .informacion-personaje {
+.informacion-personaje{
+    height: 500px;
+    margin-top: 5%;
+    margin-right: 2.5%;
+    border-radius: 40px;
+    width: 55%;
     background-color: #EDE1BD;
-    color: white;
-    width: 50%;
 }
-
-
+.abilities{
+    margin-top: 5%;
+    height: 500px;
+    width: 95%;
+    background-image: url("../assets/main/fondo-raiden.jpg");
+    background-size: cover;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    border-radius: 40px;
+    margin-bottom: 5%;
+}

@@ -8,14 +8,13 @@
 
 body {
     background-color:#FFF9F1;
-    display: flex;
+    
 }
 
 header{
     width: 100%;
     background-color:#EDE1BD;
     padding: 30px 30px;
-    position: fixed;
     z-index: 1000;
 }
 
@@ -72,20 +71,95 @@ button {
     margin: 5px;
 }
 
-.contenedor {
+.contenedor-general {
     display: flex;
+    justify-content: space-between;
+    background-color: #FFF7DF;
+    margin-top: 5%;
+    margin-left: 2.5%;
+    border-radius: 40px;
+    width: 95%;
+    height: 600px;
+    padding-left: 300px;
+    padding-right: 300px;
+
+}
+
+
+.profile-img img {
+    margin: 0;
+    margin-top: 80px;
+    border-radius: 50px;
+}
+
+.columna-izquierda h2{
+    display: flex;
+    margin: 20px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+   
+}
+
+
+.columna-derecha {
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     margin: 0;
-    margin-top: 180px;
-    border-radius: 50px;
-    width: 1000px;
-    height: 600px;
-    background-color: #FFF7DF;
-    color: #232222;
-    position: relative;
-    left: 250px;
-
-
-    
+    width: 40%;
 }
+
+.bloque-arriba {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+
+}
+
+.bloque-abajo {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
+
+i {
+    position: relative;
+    left: 300px;
+    bottom: 23px;
+
+}
+
+.username {
+    display: flex;
+    flex-direction: row;
+}
+
+p {
+    padding: 20px;
+}
+
+.email {
+    display: flex;
+    flex-direction: row;
+}
+
+.cellphone {
+    display: flex;
+    flex-direction: row;
+}
+
+.passsword {
+    display: flex;
+    flex-direction: column;
+}
+
+.passsword p {
+    margin: 5px;
+}
+
+strong {
+    color: red;
+}
+
