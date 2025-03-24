@@ -1,12 +1,8 @@
 html, body{
-    /*background-image: url("../assets/main/banner-main.jpg");
-    background-size: cover;*/
     font-family: "Montserrat";
     padding:0px;
     margin:0px;
 }
-
-
 
 header{
     width: 100%;

@@ -1,0 +1,111 @@
+html, body{
+    font-family: "Montserrat";
+    padding:0px;
+    margin:0px;
+}
+header{
+    background-image: url("../assets/landing/banner-travlers.jpeg");
+    background-size: cover;
+    width: 100%;
+    height: 770px;
+    background-repeat: no-repeat;
+}
+.menu{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.menu ul{
+    display: flex;
+    align-items: center;
+    text-align: end;
+    list-style: none;
+    gap: 40px;
+}
+
+.menu ul li a{
+    text-decoration: none;
+    color: #232222;
+    font-weight: 600;
+}
+.menu ul li input{
+    font-family: "Montserrat";
+    outline: none;
+    width: 100%;
+    padding: 7px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+}
+.profile{
+    padding-right: 50px;
+}
+.sign-out{
+    margin-left: 20px;
+    font-size: 15px;
+    font-family: "Montserrat";
+    width: 110px;
+    padding: 8px; 
+    background-color: #F4D99F;
+    border-radius: 25px;
+    border: none;
+    color: #515151;
+    font-weight: 600;
+}
+.sign-out:hover{
+    margin-left: 20px;
+    font-size: 15px;
+    font-family: "Montserrat";
+    width: 110px;
+    padding: 8px; 
+    background-color: #ebc679;
+    border-radius: 25px;
+    border: none;
+    color: #515151;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgb(165, 163, 163);
+}
+.user{
+    width: 80%;
+    border-radius: 50%;
+}
+/* Propuesta de valor pagina web*/
+
+.proposal{
+    background-color: #EDE1BD;
+    display: flex;
+    height: 450px;
+    width: 100%;
+}
+.content{
+    padding-left: 12%;
+    width: 60%;
+    padding-top: 7%;
+    align-items: center;
+}
+.title{
+    color: #232222;
+    font-size: 45px;
+    font-style: bold;
+}
+.opening{
+    line-height: 0.5;
+}
+.text{
+    padding-top: 5%;
+    font-size: 20px;
+}
+.join-btn{
+    font-size: 18px;
+    font-family: "Montserrat";
+    width: 25%;
+    padding: 12px; 
+    background-color: #FCD892;
+    border-radius: 25px;
+    border: none;
+    color: #232222;
+    font-weight: 500;
+}
+.klee-character{
+    width: 93%;
+}
