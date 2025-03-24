@@ -71,72 +71,67 @@ button {
     margin: 5px;
 }
 
-.personaje {
-    color: white;
-    background-color: #C13A21;
+
+.introduccion {
+    margin: 40px;
+    margin-left: 40px;
+    margin-bottom: 10px;
+    margin-top: 250px;
+    
+}
+
+.introduccion p {
+    margin-top: 30px;
+}
+
+.contenedor {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 80px auto 0 auto;
-    margin-top: 200px;
-    width: 100%;
-    max-width: 1200px; 
+    color: #232222;
+    margin-top: 10px;
+}
+
+.contenedor .fila-superior .personaje1 {
+    background-color: #EDE1BD;
+    width: 430px;
+    height: 480px;
+    max-width: 100%;
+    margin: 40px;
     border-radius: 50px;
-    padding: 40px;
-    max-height: 470px;
-
+    
 }
 
-.personaje .personaje-img img {
-    width: 1200px;
+.contenedor .fila-superior .personaje1 .fondo-Img {
+    background-color: #F4D99F;
+    width: 430px;
+    height: 250px;
     max-width: 100%;
-    margin: auto;
-
+    margin: 40px;
+    border-radius: 50px;
+    position: relative;
+    right: 40px;
 }
 
-.personaje .personaje-general p {
-    padding: 20px;
-}
-
-.personaje .personaje-general h1 {
-    padding: 0px 20px;
-    font-size:50px; 
-}
-
-.personaje .personaje-general strong {
-    padding: 40px 20px;
-    font-size: large;
-    font-style: italic;
-}
-
-.personaje .personaje-general i {
-    color: yellow;
-    padding: 3px;
-}
-
-
-.personaje-2 {
+.fondo-Img h3 {
     display: flex;
-    flex-wrap: wrap;
-    margin:auto
-
-
-
-}
-
-.personaje-2 .personaje-portrait {
-    color: #C13A21;
-    max-width: 100%;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+    margin: auto;
+    margin-top: 280px;
+    font-size: xx-large;
 
 }
 
-.personaje-2 .personaje-portrait img {
-    width: 50%;
-}
+.fondo-Img p {
 
-.personaje-2 .informacion-personaje {
-    color: #EDE1BD;
-    width: 50%;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+    margin: auto;
+    margin-top: 3px;
+    font-size: large;
 }
-
 
