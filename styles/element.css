@@ -8,15 +8,12 @@
 
 body {
     background-color:#FFF9F1;
-    display: flex;
 }
 
 header{
     width: 100%;
     background-color:#EDE1BD;
     padding: 30px 30px;
-    position: fixed;
-    z-index: 1000;
 }
 
 .logo{
@@ -71,32 +68,21 @@ button {
     padding: 5px;
     margin: 5px;
 }
-
-.personaje {
-    color: white;
+.personaje{
     background-color: #C13A21;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 80px auto 0 auto;
-    margin-top: 200px;
-    width: 100%;
-    max-width: 1200px; 
-    border-radius: 50px;
-    padding: 40px;
-    max-height: 470px;
-
+    height: 450px;
+    margin-top: 5%;
+    margin-left: 2.5%;
+    border-radius: 40px;
+    width: 95%;
 }
 .personaje-general{
+    padding-left: 3%;
+    color: white;
+    padding-top: 12%;
     width: 40%;
 }
-.personaje-img img {
-    width: 1200px;
-    max-width: 100%;
-    margin: auto;
-
-}
-
 .personaje-general p {
     padding: 20px;
 }
@@ -117,26 +103,132 @@ button {
     padding: 3px;
 }
 
-
-.personaje-2 {
-    display: flex;
-    width: 100%;
-}
-
-.personaje-portrait {
+.personaje-img{
     width: 50%;
-    background-color: #C13A21;
+    margin-left: 200px;
+}
+.img-personaje {
+    width: 85%;
 
+}
+/*Personaje 2*/
+
+.container-2{
+    gap: 50px;
+    width: 100%;
+    display: flex;
+}
+.personaje-portrait {
+    margin-top: 5%;
+    margin-left: 2.5%;
+    border-radius: 40px;
+    width: 45%;
+    background-color: #C13A21;
+    height: 600px;
 }
 
 .personaje-portrait img {
-    width: 10px;
-}
+    width: 70%;
+    margin: 0;
+    margin-left: 100px;
+    margin-bottom:150px ;
 
-.personaje-2 .informacion-personaje {
+
+}
+.informacion-personaje{
+    height: 600px;
+    margin-top: 5%;
+    margin-right: 2.5%;
+    border-radius: 40px;
+    width: 55%;
     background-color: #EDE1BD;
-    color: white;
-    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
+.informacion-personaje .columna-izquierda {
+    width: 300px;
+    height: 400px;
+    font-size: large;
+}
 
+.informacion-personaje .columna-derecha {
+    width: 100px;
+    height: 400px;
+    font-size: large;
+
+}
+
+.boton_favoritos {
+    position: relative;
+    top: 200px;
+    right: 210px;
+    width: 200px;
+    height:60px;
+    font-size: medium;
+
+
+}
+
+.abilities{
+    margin-top: 5%;
+    height: 800px;
+    width: 95%;
+    background-image: url("../assets/element/namecard-hutao.jpg");
+    background-size: cover;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    border-radius: 40px;
+    margin-bottom: 5%;
+    padding: 200px;
+}
+.contenedor-abilities img {
+    width: 80px;
+    height:80px;
+    margin: 0;
+    margin-top: 20px;
+    margin-left: 5px;
+}
+
+.ability {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px;
+    justify-content: center;
+}
+
+.ability p {
+
+    margin: 10px;
+    
+}
+
+/* .contenedor-abilities {
+    background-color:#EDE1BD ;
+    font-weight: 300;
+    font-size: medium;
+    display: flex;
+    flex-direction: row;
+    border-radius: 50px;
+    width: 600px;
+    height: 250px;
+    margin: 0;
+
+} */
+
+.abilities-group {
+
+    background-color:#EDE1BD ;
+    font-weight: 300;
+    font-size: medium;
+    display: flex;
+    flex-direction: row;
+    border-radius: 50px;
+    width: 630px;
+    height: 300px;
+    padding: 20px;
+
+}

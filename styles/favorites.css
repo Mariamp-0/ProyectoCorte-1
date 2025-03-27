@@ -196,8 +196,6 @@ button {
 }
 
 .explorar-boton button {
-    align-items: flex-end;
-    justify-content:flex-end;
     border-radius: 50px;
     width: 200px;
     height: 60px;
@@ -207,5 +205,10 @@ button {
     background-color: #F4D99F;
     font-weight: 500;
     font-size: medium;
+    
+}
 
+.hipervinculo {
+
+    text-decoration: none;
 }
