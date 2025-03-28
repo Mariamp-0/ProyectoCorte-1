@@ -1,5 +1,4 @@
 
-
 body{
     background-image: url("../assets/login/login-fondo.png");
     background-size: cover;
@@ -14,6 +13,35 @@ img{
     position: absolute;
     top: 30px;
     left: 30px;
+}
+.home-btn{
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    margin-left: 20px;
+    font-size: 15px;
+    font-family: "Montserrat";
+    width: 110px;
+    padding: 8px; 
+    background-color: #F4D99F;
+    border-radius: 25px;
+    border: none;
+    color: #515151;
+    font-weight: 600;
+}
+.home-btn:hover{
+    margin-left: 20px;
+    font-size: 15px;
+    font-family: "Montserrat";
+    width: 110px;
+    padding: 8px; 
+    background-color: #ebc679;
+    border-radius: 25px;
+    border: none;
+    color: #515151;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgb(165, 163, 163);
 }
 main{
     padding-top: 20px;

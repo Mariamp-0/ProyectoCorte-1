@@ -2,6 +2,7 @@ html, body{
     font-family: "Montserrat";
     padding:0px;
     margin:0px;
+    scroll-behavior: smooth;
 }
 
 header{
@@ -188,6 +189,9 @@ header{
     height: 450px;
     background: linear-gradient(white 20%, #FCD892 80%);
     border-radius: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+
 }
 
 .card:nth-child(2){
@@ -195,6 +199,8 @@ header{
     height: 450px;
     background: linear-gradient(white 20%, #CBD5E8 80%);
     border-radius: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 .card:nth-child(3){
@@ -202,6 +208,31 @@ header{
     height: 450px;
     background: linear-gradient(white 20%, #8BC5D8 80%);
     border-radius: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.card:nth-child(n):hover{
+    box-shadow: 0 0 20px rgba(153, 153, 153, 0.8); /* Brillo dorado */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño */
+}
+
+.card:nth-child(2){
+    width: 30%;
+    height: 450px;
+    background: linear-gradient(white 20%, #CBD5E8 80%);
+    border-radius: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.card:nth-child(3){
+    width: 30%;
+    height: 450px;
+    background: linear-gradient(white 20%, #8BC5D8 80%);
+    border-radius: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 .card-image img{
@@ -295,6 +326,8 @@ header{
     height: 450px;
     background: linear-gradient(white 20%, #9C7A4C 80%);
     border-radius: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 .card2:nth-child(2){
@@ -302,6 +335,13 @@ header{
     height: 450px;
     background: linear-gradient(white 20%, #CA2D29 80%);
     border-radius: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.card2:nth-child(n):hover{
+    box-shadow: 0 0 20px rgba(153, 153, 153, 0.8); /* Brillo dorado */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño */
 }
 
 /* Most popular character section*/

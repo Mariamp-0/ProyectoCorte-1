@@ -3,11 +3,14 @@ html, body{
     padding:0px;
     margin:0px;
     background-color: #FFF9F1;
+    scroll-behavior: smooth;
 }
+
 header{
     background-image: url("../assets/landing/banner-travlers.jpeg");
     background-size: cover;
     width: 100%;
+    max-width: 100%;
     height: 770px;
     background-repeat: no-repeat;
 }
@@ -79,6 +82,7 @@ header{
     display: flex;
     height: 450px;
     width: 100%;
+    max-width: 100%;
 }
 .content{
     padding-left: 12%;
@@ -95,10 +99,11 @@ header{
     line-height: 0.5;
 }
 .text{
-    padding-top: 5%;
+    padding-top: 3%;
     font-size: 20px;
 }
 .join-btn{
+    margin-top: 3%;
     font-size: 18px;
     font-family: "Montserrat";
     width: 25%;
@@ -124,6 +129,7 @@ header{
 }
 .klee-character{
     width: 93%;
+    max-width: 93%;
 }
 /* Description section*/
 
@@ -236,6 +242,7 @@ header{
 .login-container{
     margin-top: 5%;
     background-color: #F4D99F;
+    max-width: 100%;
     width: 100%;
     height: 250px;
     display: flex;
@@ -248,13 +255,8 @@ header{
     font-style: italic;
     font-weight: 600;
 }
-.login-btn{
-    border: none;
-    border-radius: 80px;
-}
-.login-btn img{
-    object-fit: fill;
-}
+
+
 
 /* Carousel */
 .title-carrousel{
@@ -352,6 +354,7 @@ input[type="radio"] {
     flex-direction: column;
 }
 .contact-mean {
+    margin-top: 20px;
     display: flex;
     width: 100%;
     gap: 40px;
