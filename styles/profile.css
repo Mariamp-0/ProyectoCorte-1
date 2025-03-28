@@ -10,10 +10,11 @@ header{
 .logo{
     width: 12%;
     position: absolute;
-    top: 20px;
+    top: 30px;
     left: 40px;
 }
 .menu{
+    height: 120px;
     display: flex;
     justify-content: flex-end;
 }
@@ -69,7 +70,7 @@ header{
     box-shadow: 0 0 10px rgb(165, 163, 163);
 }
 .user{
-    width: 80%;
+    width: 70%;
     border-radius: 50%;
 }
 

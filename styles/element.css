@@ -27,15 +27,29 @@ header{
 .menu{
     display: flex;
     justify-content: flex-end;
-    color: #232222;
+    
 }
 
 .menu ul li a{
     text-decoration: none;
     color:#232222;;
-    font-weight: 600;
+    font-weight: 500;
 }
 
+.sign-out:hover{
+    margin-left: 20px;
+    font-size: 15px;
+    font-family: "Montserrat";
+    width: 110px;
+    padding: 8px; 
+    background-color: #ebc679;
+    border-radius: 25px;
+    border: none;
+    color: #515151;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgb(165, 163, 163);
+}
 .menu ul li input{
     outline: none;
     width: 100%;
@@ -46,6 +60,18 @@ header{
     font-style: italic;
 }
 
+.sign-out{
+    margin-left: 20px;
+    font-size: 15px;
+    font-family: "Montserrat";
+    width: 110px;
+    padding: 8px; 
+    background-color: #F4D99F;
+    border-radius: 25px;
+    border: none;
+    color: #515151;
+    font-weight: 600;
+}
 .user{
     width: 25%;
     border-radius: 50%;
