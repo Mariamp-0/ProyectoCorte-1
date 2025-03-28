@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="../styles/profileprueba.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alkatra&family=Delius+Unicase:wght@400;700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Preahvihear&family=Rakkas&family=Rowdies:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+</head>
+
+<body>
+    <header>
+        <img class="logo" src="../assets/logogenshing.png" />
+        <nav class="menu">
+            <ul>
+                <li>
+                    <a href="../pages/landing.html">Home</a>
+                </li>
+                <li>
+                    <a href="../pages/favorites.html">Favorites</a>
+                </li>
+                <li>
+                    <input type="search" placeholder="Search">
+                </li>
+                <li>
+                    <form action="../pages/landing.html">
+                        <button class="sign-out">Sign Out</button>
+                    </form>
+                </li>
+                <a href="../pages/profile.html">
+                    <li class="profile">
+                        <img class="user" src="../assets/main/profile-icon.png" />
+                    </li>
+                </a>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="container">
+        <div class="left-side">
+            <img src="../assets/main/user-avatar.jpg" />
+            <p class="name">@Maria123</p>
+            <div class="favorites">
+                <p>Favorites</p>
+                <p>6</p>
+            </div>
+        </div>
+        <div class="split-line">
+
+        </div>
+        <div class="right-side">
+            <h1>Personal information</h1>
+            <div class="data">
+                <p class="key">Username</p>
+                <p class="label">Maria123</p>
+            </div>
+            <div class="data">
+                <p class="key">Email</p>
+                <p class="label">mapu123@gmail.com</p>
+            </div>
+            <div class="data">
+                <p class="key">Cellphone number</p>
+                <p class="label">356 7897 283</p>
+            </div>
+
+            <div class="password">
+                <h1>Password and Security</h1>
+                <div class="reset">
+                    <p class="key">Password</p>
+                    <button class="reset-btn">Reset</button>
+                </div>
+                <input class="new-password" type="password" placeholder="Type your new password" required>
+            </div>
+        </div>
+
+    </section>
+</body>
+
+</html>
