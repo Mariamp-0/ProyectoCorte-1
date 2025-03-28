@@ -112,6 +112,7 @@ button {
     width: 85%;
 
 }
+
 /*Personaje 2*/
 
 .container-2{
@@ -149,23 +150,26 @@ button {
     justify-content: center;
 }
 
+
 .informacion-personaje .columna-izquierda {
     width: 300px;
     height: 400px;
     font-size: large;
+    margin-left: 80px;
 }
 
 .informacion-personaje .columna-derecha {
     width: 100px;
     height: 400px;
     font-size: large;
+    margin-left: 60px;
 
 }
 
 .boton_favoritos {
     position: relative;
     top: 200px;
-    right: 210px;
+    right: 280px;
     width: 200px;
     height:60px;
     font-size: medium;
@@ -185,12 +189,14 @@ button {
     margin-bottom: 5%;
     padding: 200px;
 }
-.contenedor-abilities img {
-    width: 80px;
-    height:80px;
-    margin: 0;
-    margin-top: 20px;
-    margin-left: 5px;
+
+
+.abilities h2 {
+    position: relative;
+    top: 50px;
+    left: 40px;
+    font-size: x-large;
+    font-weight: 400;
 }
 
 .ability {
@@ -206,19 +212,6 @@ button {
     margin: 10px;
     
 }
-
-/* .contenedor-abilities {
-    background-color:#EDE1BD ;
-    font-weight: 300;
-    font-size: medium;
-    display: flex;
-    flex-direction: row;
-    border-radius: 50px;
-    width: 600px;
-    height: 250px;
-    margin: 0;
-
-} */
 
 .abilities-group {
 

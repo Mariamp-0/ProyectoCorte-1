@@ -96,7 +96,6 @@ button {
     display: flex;  
     justify-content: space-around;  
     align-items: center; 
-    flex-wrap: nowrap;
     max-width: 1200x;
     width: 100%;
     margin: 0;
@@ -104,9 +103,7 @@ button {
 }
 
 .personaje {
-    width: 100%;
-    flex-direction: column; 
-    align-items: center; 
+    width: 50%; 
     justify-content: center; 
     text-align: center;
     background-color: #fdf2d0;
@@ -123,7 +120,6 @@ button {
     flex-direction: column; 
     justify-content: center; 
     align-items: center; 
-    text-align: center; 
     margin: 0;
     background-color: #F4D99F;
     width: 430px;
@@ -149,7 +145,8 @@ button {
     font-size: large;
 }
 
-.fondo-Img button {
+.fondo-Img a {
+    display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50px;
@@ -158,8 +155,10 @@ button {
     min-height: 40px;
     margin: auto;
     margin-top: 20px;
-    color: #515151;
+    color: #212121;
     background-color: #F4D99F;
+    font-weight: 600;
+    font-size: small; 
     
 }
 
@@ -175,7 +174,6 @@ button {
     display: flex;  
     justify-content: space-around;  
     align-items: center; 
-    flex-wrap: nowrap;
     max-width: 1200x;
     width: 100%;
     margin: 0;
@@ -208,7 +206,9 @@ button {
     
 }
 
-.hipervinculo {
+
+a {
 
     text-decoration: none;
 }
+
