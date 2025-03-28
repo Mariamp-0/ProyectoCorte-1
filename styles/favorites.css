@@ -14,7 +14,6 @@ body {
 header{
     width: 100%;
     background-color:#EDE1BD;
-    padding: 30px 30px;
     position: fixed;
     z-index: 1000;
 }
@@ -23,55 +22,68 @@ header{
     width: 12%;
     position: absolute;
     top: 30px;
-    left: 30px;
+    left: 40px;
 }
-
 .menu{
+    height: 120px;
     display: flex;
     justify-content: flex-end;
-    color: #232222;
-}
-
-.menu ul li a{
-    text-decoration: none;
-    color:#232222;;
-    font-weight: 600;
-}
-
-.menu ul li input{
-    outline: none;
-    width: 100%;
-    padding: 7px;
-    border-radius: 20px;
-    border: 1px solid #ccc;
-    color: #232222;
-    font-style: italic;
-}
-
-.user{
-    width: 25%;
-    border-radius: 50%;
 }
 
 .menu ul{
     display: flex;
     align-items: center;
+    text-align: end;
     list-style: none;
     gap: 40px;
 }
 
-button {
-    border-radius: 50px;
-    background-color: #F4D99F;
-    font-weight: 600;
+.menu ul li a{
+    text-decoration: none;
     color: #232222;
-    border: none;
-    width: 100%;
-    height: 30px;
-    padding: 5px;
-    margin: 5px;
+    font-weight: 500;
 }
-
+.menu ul li input{
+    font-family: "Montserrat";
+    outline: none;
+    width: 100%;
+    padding: 7px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+}
+.profile{
+    padding-right: 50px;
+}
+.sign-out{
+    margin-left: 20px;
+    font-size: 15px;
+    font-family: "Montserrat";
+    width: 110px;
+    padding: 8px; 
+    background-color: #F4D99F;
+    border-radius: 25px;
+    border: none;
+    color: #515151;
+    font-weight: 600;
+}
+.sign-out:hover{
+    margin-left: 20px;
+    font-size: 15px;
+    font-family: "Montserrat";
+    width: 110px;
+    padding: 8px; 
+    background-color: #ebc679;
+    border-radius: 25px;
+    border: none;
+    color: #515151;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgb(165, 163, 163);
+}
+.user{
+    width: 70%;
+    border-radius: 50%;
+}
 
 .introduccion {
     margin: 0px;
@@ -150,6 +162,9 @@ button {
 }
 
 .fondo-Img button {
+    font-size: 15px;
+    font-weight: 500;
+    border: none;
     align-items: center;
     justify-content: center;
     border-radius: 50px;
@@ -162,7 +177,24 @@ button {
     background-color: #F4D99F;
     
 }
-
+.fondo-Img button:hover {
+    font-size: 15px;
+    font-weight: 500;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    max-width: 100%;
+    width: 150px;
+    min-height: 40px;
+    margin: auto;
+    margin-top: 20px;
+    color: #515151;
+    background-color: #f8d384;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgb(165, 163, 163);
+    
+}
 .Img-contenedor img{
     margin: 0;
     margin-top:180px;
@@ -196,6 +228,7 @@ button {
 }
 
 .explorar-boton button {
+    border: none;
     border-radius: 50px;
     width: 200px;
     height: 60px;
@@ -206,6 +239,20 @@ button {
     font-weight: 500;
     font-size: medium;
     
+}
+.explorar-boton button:hover {
+    border: none;
+    border-radius: 50px;
+    width: 200px;
+    height: 60px;
+    margin: auto;
+    margin-top: 20px;
+    color: #515151;
+    background-color: #f7d180;
+    font-weight: 500;
+    font-size: medium;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgb(165, 163, 163);
 }
 
 .hipervinculo {
