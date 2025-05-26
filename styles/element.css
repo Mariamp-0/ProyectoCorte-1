@@ -96,7 +96,7 @@ button {
     margin: 5px;
 }
 .personaje{
-    background-color: #C13A21;
+    background-color: #e6ca8f;
     display: flex;
     height: 450px;
     margin-top: 5%;
@@ -151,7 +151,7 @@ button {
     margin-left: 2.5%;
     border-radius: 40px;
     width: 45%;
-    background-color: #C13A21;
+    background-color: #EDE1BD;
     height: 600px;
 }
 
@@ -207,7 +207,8 @@ button {
     margin-top: 5%;
     height: 800px;
     width: 95%;
-    background-image: url("../assets/element/namecard-hutao.jpg");
+    /* background-image: url("../assets/element/namecard-hutao.jpg"); */
+    background-color: #e6ca8f;
     background-size: cover;
     margin-left: 2.5%;
     margin-right: 2.5%;

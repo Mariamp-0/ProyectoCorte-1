@@ -1,30 +1,71 @@
+//Constructor de personajes
 
-// Modele una lista de favoritos dentro del objeto de
-// usuarios, de modo que cada usuario tenga al menos 3 elementos favoritos fijos
-// por ahora y que estos sean mostrados usando el DOM en esta sección.
+function Personaje(nombre, rareza, vision, imagen, detalleUrl) {
+  this.nombre = nombre;
+  this.rareza = rareza;
+  this.vision = vision;
+  this.imagen = imagen;
+  this.detalleUrl = detalleUrl;
+}
 
+//Dummy
 
-//Constructor para personajes - Objetos
+const personajesFavoritos = [
+  new Personaje("Hu Tao", "5 star", "Pyro", "../assets/favorites/icon-hutao.jpg", "../pages/element.html"),
+  new Personaje("Alhaitham", "5 star", "Dendro", "../assets/favorites/alhaitham-icon.jpg", "../pages/element.html"),
+  new Personaje("Raiden Shogun", "5 star", "Electro", "../assets/favorites/raiden-icon.jpg", "../pages/element.html")
+];
 
-function personaje(nombre, rareza, elemento, imagen, detalleUrl) {
-  this.nombre = nombre ;
-  this.rareza = rareza ;
-  this.elemento = elemento ;
-  this.imagen = imagen ;
-  this.detalleUrl = detalleUrl ;
+//Renderizado de favoritos
+
+const seccionFavoritos = document.querySelector(".favoritos");
+if (seccionFavoritos) {
+  seccionFavoritos.innerHTML = '<div class="contenedor"></div>';
+  const contenedor = seccionFavoritos.querySelector(".contenedor")
+  
+  //Agrega tres personajes por fila y crea la tarjeta de personaje
+  for (let i = 0; i < personajesFavoritos.length; i += 3) {
+    const fila = document.createElement("div");
+    fila.className = "fila-superior"; 
+    
+
+    const personajesFila = personajesFavoritos.slice(i, i + 3);
+    personajesFila.forEach(p => {
+      fila.innerHTML += `
+        <div class="personaje">
+          <div class="fondo-Img">
+            <div class="Img-contenedor">
+              <img src="${p.imagen}" alt="${p.nombre}">
+            </div>
+            <h3>${p.nombre}</h3>
+            <p>${p.rareza}</p>
+            <p>${p.vision}</p>
+            <a href="${p.detalleUrl}" class="detalle-link">See details</a>
+          </div>
+        </div>
+      `;
+      });
+    contenedor.appendChild(fila)
+  }
+
+  // Añade eventListener para conectar cada tarjeta con el element.html que muestra su información respectiva
+  const enlaces = document.querySelectorAll('.personaje a');
+
+  enlaces.forEach((enlace, index) => {
+    enlace.addEventListener('click', function(e) {
+      e.preventDefault()
+      
+      const personaje = personajesFavoritos[index]
+
+      localStorage.setItem('nombrePersonaje', personaje.nombre)
+
+      window.location.href = personaje.detalleUrl;
+
+    })
+  });
 }
 
 
-//Dummies para favoritos
+      
 
-const personajesFavoritos = [
-  new personaje("Hu Tao", "Five star", "Pyro", "../assets/favorites/icon-hutao.jpg", "../pages/element.html"),
-  new personaje("Alhaitham", "Five star", "Dendro", "../assets/favorites/alhaitham-icon.jpg", "../pages/element.html"),
-  new personaje("Raiden Shogun", "Five star", "Electro", "../assets/favorites/raiden-icon.jpg", "../pages/element.html"),
-  new personaje("Tartaglia", "Five star", "Hydro", "../assets/favorites/tartaglia-icon.jpg", "../pages/element.html"),
-  new personaje("Nahida", "Five star", "Dendro", "../assets/favorites/nahida-icon.jpg", "../pages/element.html"),
-  new personaje("Barbara", "Four star", "Hydro", "../assets/favorites/barbara-icon.jpg", "../pages/element.html"),
-  new personaje("Albedo","Five star","Geo","../assets/favorites/albedo-icon.jpg","../pages/element.html"),
-
-] ;
 
