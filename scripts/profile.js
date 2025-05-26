@@ -54,6 +54,22 @@ signOut.addEventListener("click", (e) => {
     window.location.href = "landing.html"
 })
 
+let resetBtn = document.querySelector(".reset-btn")
+
+resetBtn.addEventListener("click", (e) => {
+    e.preventDefault()
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get("id");
+
+    let newPassword = document.querySelector(".new-password").value
+    players[id].password = newPassword
+
+    alert("Contraseña cambiada exitosamente!")
+    
+})
+
+
+
 
 
 
