@@ -113,3 +113,12 @@ function renderizarPersonajes(personajes){
 }
 
 renderizarPersonajes(personajes)
+
+
+let signOut = document.querySelector(".sign-out")
+
+signOut.addEventListener("click", (e) => {
+    e.preventDefault()
+    //Eliminar seccion para local storage
+    window.location.href = "landing.html"
+})

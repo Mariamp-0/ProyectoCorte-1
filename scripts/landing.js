@@ -41,3 +41,17 @@ for(let i= 0; i < authors.length; i++){
 
 }
 
+
+let joinNowButton = document.querySelector(".join-btn")
+let loginButton = document.querySelector(".login-boton")
+
+joinNowButton.addEventListener("click", (e) => {
+    e.preventDefault()
+    window.location.href = "login.html"
+})
+
+loginButton.addEventListener("click", (e) => {
+    e.preventDefault()
+    window.location.href = "login.html"
+})
+
