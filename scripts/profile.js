@@ -1,82 +1,48 @@
-//Llamar elementos del DOM
-
-let contenedor = document.getElementsByClassName("contenedor");
-let filaSuperior = document.getElementsByClassName("fila-superior");
-let filaInferior = document.getElementsByClassName("fila-inferior");
 
 
-const genshinCharacters = [
-{
-    name: "Raiden",
-    vision: "Electro",
-    stars: "5 star",
-    imagen: '../favorites/raiden-icon.jpg',
-    
-}, 
-
-{
-    name: "HuTao",
-    vision: "Pyro",
-    stars: "5 star",
-    imagen: '../favorites/icon-hutao.jpg',
-
-}
-   
-] ;
-
-index = 1
-
-for (const genshinCharacter of genshinCharacters) {
-
-
-    let personajeDiv = document.createElement('div'); //Padre de los elementos img,nombre,estrellas,vision,url
-
-    let nombrePersonaje = document.createElement('h3');
-    nombrePersonaje = genshinCharacter.name ;
-    let estrellasPersonaje = document.createElement('p');
-    estrellasPersonaje = genshinCharacter.stars;
-    let visionPersonaje = document.createElement('p');
-    visionPersonaje = genshinCharacter.vision ;
-    let imagenPersonaje = document.createElement('img');
-    imagenPersonaje.setAttribute("src",genshinCharacter.imagen);
-    let botonDetalles = document.
-
-
-    personajeDiv.id = "personaje" + index ;
-    imagenPersonaje.id = "imagen" + index ;
-    nombrePersonaje.id = "nombre" + index;
-    estrellasPersonaje.id = "estrella" + index;
-    visionPersonaje.id = "vision" + index ;
-
-    personajeDiv.className = "personaje" ;
-    personajeDiv.appendChild(imagenPersonaje);
-    personajeDiv.appendChild(nombrePersonaje);
-    personajeDiv.appendChild(estrellasPersonaje);
-    personajeDiv.appendChild(visionPersonaje);
-
-    contenedor.appendChild(personajeDiv);
-
-    let imagen = document.createElement('img')
-    imagen.setAttribute('src',digimon)
-    div.appendChild(imagen)
-    // let boton = document.createElement('button')
-    // boton.innerText = "Eliminar Digimon"
-    // // boton.addEventListener("click",function(e){
-    // //     let elemento = e.target.parentElement
-    // //     elemento.remove()
-    // }) 
-
-
-    div.append(boton)
-    galeria.append(div)
+function Player(username, email, password, favorites){
+    this.username = username;
+    this.email = email;
+    this.password = password;
+    this.favorites = favorites;
 }
 
-
-for (let index = 0;index < 120; index++) {
-    fetch("" + index).then(response => {
-        
-    })
-    let digiApi = JSON.parse(response)
-    createDigimon(digiApi.imagenes[0].img)
-
+function personaje(nombre,titulo, rareza, vision, imagen, detalleUrl) {
+  this.nombre = nombre;
+  this.rareza = rareza;
+  this.titulo = titulo;
+  this.vision = vision;
+  this.imagen = imagen;
+  this.detalleUrl = detalleUrl;
 }
+
+const personajesFavoritos = [
+  new personaje("Albedo", "Kreideprinz" ,"5 star", "Pyro", "albedo.png", "../pages/element.html?id=1"),
+  new personaje("Kaeya", "Frostwind Swordsman","5 star", "Dendro", "kaeya.jpg", "../pages/element.html?id=2"),
+  new personaje("Jean", "Dandelion Knight", "5 star", "Electro", "jean.jpg", "../pages/element.html?id=3"),
+  new personaje("Zhongli", "Vago Mundo", "5 star", "Hydro", "zhongli.jpeg", "../pages/element.html?id=4"),
+];
+
+let players = []
+
+players.push(new Player("Cata123", "cata@gmail.com", "000", personajesFavoritos))
+players.push(new Player("Maria456", "maria@gmail.com", "111", personajesFavoritos))
+
+function renderizarProfile() {
+
+    const params = new URLSearchParams(window.location.search);
+    const id = params.get("id");
+    let usernameLeft = document.getElementById("usernameLeft")
+    let amountFavorites = document.getElementById("amountFavorites")
+    let username = document.getElementById("username")
+    let email = document.getElementById("email")
+
+    usernameLeft.innerText = players[id].username
+    amountFavorites.innerText = players[id].favorites.length
+    username.innerText = players[id].username
+    email.innerText = players[id].email
+}
+
+renderizarProfile()
+
+
