@@ -178,61 +178,27 @@ header{
     width: 100%;
 }
 .cards-container{
+    flex-wrap: wrap;
     display: flex;
     justify-content: center;
     gap: 25px;
     padding-top: 3%;
 }
 
-.card:nth-child(1){
+.card{
     width: 30%;
     height: 450px;
-    background: linear-gradient(white 20%, #FCD892 80%);
+    background: linear-gradient(white 20%, #c1bafc 80%);
     border-radius: 50px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+    margin-top: 5%
 
 }
 
-.card:nth-child(2){
-    width: 30%;
-    height: 450px;
-    background: linear-gradient(white 20%, #CBD5E8 80%);
-    border-radius: 50px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
-}
-
-.card:nth-child(3){
-    width: 30%;
-    height: 450px;
-    background: linear-gradient(white 20%, #8BC5D8 80%);
-    border-radius: 50px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
-}
-
-.card:nth-child(n):hover{
+.card:hover{
     box-shadow: 0 0 20px rgba(153, 153, 153, 0.8); /* Brillo dorado */
     transform: scale(1.05); /* Aumenta ligeramente el tamaño */
-}
-
-.card:nth-child(2){
-    width: 30%;
-    height: 450px;
-    background: linear-gradient(white 20%, #CBD5E8 80%);
-    border-radius: 50px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
-}
-
-.card:nth-child(3){
-    width: 30%;
-    height: 450px;
-    background: linear-gradient(white 20%, #8BC5D8 80%);
-    border-radius: 50px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 
 .card-image img{
@@ -313,36 +279,6 @@ header{
     box-shadow: 0 0 10px rgb(165, 163, 163);
 }
 
-/*Characters section 2*/
-
-.cards-container2{
-    display: flex;
-    justify-content: center;
-    gap: 70px;
-    padding-top: 3%;
-}
-.card2:nth-child(1){
-    width: 40%;
-    height: 450px;
-    background: linear-gradient(white 20%, #9C7A4C 80%);
-    border-radius: 50px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
-}
-
-.card2:nth-child(2){
-    width: 40%;
-    height: 450px;
-    background: linear-gradient(white 20%, #CA2D29 80%);
-    border-radius: 50px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
-}
-
-.card2:nth-child(n):hover{
-    box-shadow: 0 0 20px rgba(153, 153, 153, 0.8); /* Brillo dorado */
-    transform: scale(1.05); /* Aumenta ligeramente el tamaño */
-}
 
 /* Most popular character section*/
 

@@ -29,9 +29,7 @@
                     <input type="search" placeholder="Search">
                 </li>
                 <li>
-                    <form action="../pages/landing.html">
-                        <button class="sign-out">Sign Out</button>
-                    </form>
+                    <button class="sign-out">Sign Out</button>
                 </li>
                 <a href="../pages/profile.html">
                     <li class="profile">
@@ -45,10 +43,10 @@
     <section class="container">
         <div class="left-side">
             <img src="../assets/main/user-avatar.jpg" />
-            <p class="name">@Maria123</p>
+            <p id="usernameLeft" class="name">@Maria123</p>
             <div class="favorites">
                 <p>Favorites</p>
-                <p>6</p>
+                <p id="amountFavorites">6</p>
             </div>
         </div>
         <div class="split-line">
@@ -58,17 +56,12 @@
             <h1>Personal information</h1>
             <div class="data">
                 <p class="key">Username</p>
-                <p class="label">Maria123</p>
+                <p id="username" class="label">Maria123</p>
             </div>
             <div class="data">
                 <p class="key">Email</p>
-                <p class="label">mapu123@gmail.com</p>
+                <p id="email" class="label">mapu123@gmail.com</p>
             </div>
-            <div class="data">
-                <p class="key">Cellphone number</p>
-                <p class="label">356 7897 283</p>
-            </div>
-
             <div class="password">
                 <h1>Password and Security</h1>
                 <div class="reset">
@@ -80,6 +73,8 @@
         </div>
 
     </section>
+
+    <script src="../scripts/profile.js"></script>
 </body>
 
 </html>

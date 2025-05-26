@@ -180,7 +180,7 @@ header{
     width: 100%;
     display: flex;
 }
-.left-side{
+.about-us-author{
     line-height: 0.2;
     display: flex;
     justify-content: center;
@@ -188,27 +188,12 @@ header{
     align-items: center;
     width: 50%;
 }
-.left-side img{
+.about-us-author img{
     width: 50%;
     border-radius: 50px;
 }
-.left-side p{
+.about-us-author p{
     font-size: 18px;
-}
-.right-side img{
-    width: 50%;
-    border-radius: 50px;
-}
-.right-side p{
-    font-size: 18px;
-}
-.right-side{
-    line-height: 0.2;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    width: 50%;
 }
 .name{
     padding-top: 20px;
