@@ -41,9 +41,36 @@ for(let i= 0; i < authors.length; i++){
 
 }
 
+function saveComments(e){
+    e.preventDefault()
+    const contactForm = document.getElementById("contactForm")
+    const nameContact = document.getElementById("name").value
+    const emailContact= document.getElementById("email").value
+    const commentContact= document.getElementById("comment").value
+
+    const commentStructure= {
+        name: nameContact,
+        email: emailContact,
+        comment: commentContact
+    }
+    let comments = localStorage.getItem("comments")
+    if (comments!= null) {
+        let commentsParse= JSON.parse(comments)
+        commentsParse.push(commentStructure)
+        localStorage.setItem("comments", JSON.stringify(commentsParse))
+    }else{
+        comments = []
+        comments.push(commentStructure)
+        localStorage.setItem("comments", JSON.stringify(comments))
+    }
+    contactForm.reset()
+    alert("Comentario agregado")
+}
+
 
 let joinNowButton = document.querySelector(".join-btn")
 let loginButton = document.querySelector(".login-boton")
+let enviarButton = document.querySelector(".enviar-btn")
 
 joinNowButton.addEventListener("click", (e) => {
     e.preventDefault()
@@ -54,4 +81,9 @@ loginButton.addEventListener("click", (e) => {
     e.preventDefault()
     window.location.href = "login.html"
 })
+
+enviarButton.addEventListener("click", saveComments)
+
+
+
 
