@@ -48,11 +48,13 @@ renderizarProfile()
 
 let signOut = document.querySelector(".sign-out")
 
-signOut.addEventListener("click", (e) => {
-    e.preventDefault()
-    //Eliminar seccion para local storage
-    window.location.href = "landing.html"
-})
+function cierreSesion(e){
+  e.preventDefault()
+  localStorage.removeItem("usuarioLogueado")
+  window.location.href = "landing.html"
+}
+
+signOut.addEventListener("click", cierreSesion)
 
 let resetBtn = document.querySelector(".reset-btn")
 
