@@ -1,5 +1,9 @@
-//Constructor de personajes
+//Verificar si existe sesion
+if (localStorage.getItem("usuarioLogueado") === null) {
+  window.location.href = "login.html"
+}
 
+//Constructor de personajes
 function Personaje(nombre, rareza, vision, imagen, detalleUrl) {
   this.nombre = nombre;
   this.rareza = rareza;

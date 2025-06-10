@@ -1,6 +1,9 @@
+//Verificar si existe sesion
+if (localStorage.getItem("usuarioLogueado") === null) {
+  window.location.href = "login.html"
+}
 
 //Constructor
-
 function Personaje (nombre, descripcion, rareza, imagenSplash, imagenRetrato, titulo, vision, nacion, 
     arma, constelacion, afiliacion, lanzamiento, habilidades,imagenFondo) {
   this.nombre = nombre;

@@ -1,4 +1,7 @@
-
+//Verificar si existe sesion
+if (localStorage.getItem("usuarioLogueado") === null) {
+  window.location.href = "login.html"
+}
 
 function Player(username, email, password, favorites){
     this.username = username;
