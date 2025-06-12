@@ -8,6 +8,7 @@ function changeImage(){
     let image = document.getElementById("imageNavbar")
     image.src = "../assets/profile-images/"+infoPerfil.image+"-small.png"
 }
+
 changeImage()
 
 function Player(username, email, password, favorites){
@@ -17,50 +18,54 @@ function Player(username, email, password, favorites){
     this.favorites = favorites;
 }
 
-let players = []
-
-players.push(new Player("Cata123", "cata@gmail.com", "000", []))
-players.push(new Player("Maria456", "maria@gmail.com", "111", []))
 
 
-
-function personaje(nombre, titulo, rareza, vision, imagen, detalleUrl) {
+function Personaje(id, nombre, titulo, rareza, vision) {
   this.nombre = nombre;
+  this.id     = id,
   this.rareza = rareza;
   this.titulo = titulo;
   this.vision = vision;
-  this.imagen = imagen;
-  this.detalleUrl = detalleUrl;
-}
 
-const personajes = [
-  new personaje("Albedo", "Kreideprinz" ,"5 star", "Pyro", "albedo.png", "../pages/element.html?id=1"),
-  new personaje("Kaeya", "Frostwind Swordsman","5 star", "Dendro", "kaeya.jpg", "../pages/element.html?id=2"),
-  new personaje("Jean", "Dandelion Knight", "5 star", "Electro", "jean.jpg", "../pages/element.html?id=3"),
-  new personaje("Zhongli", "Vago Mundo", "5 star", "Hydro", "zhongli.jpeg", "../pages/element.html?id=4"),
-  new personaje("Hu Tao", "Fragrance in Thaw", "5 star", "Dendro", "hu tao.jpeg", "../pages/element.html?id=5"),
-  new personaje("Barbara", "Shining Idol", "4 star", "Hydro", "barbara.jpg", "../pages/element.html?id=6"),
-  new personaje("Raiden Shogun", "Plane of Euthymia", "5 star", "Electro", "raiden.jpg", "../pages/element.html?id=3"),
-  new personaje("Tartaglia", "Childe", "5 star", "Hydro", "tartaglia.jpg", "../pages/element.html?id=4"),
-  new personaje("Ayato", "Pillar of Fortitude", "5 star", "Dendro", "ayato.jpg", "../pages/element.html?id=5"),
-  new personaje("Diona", "Kätzlein Cocktail","5 star", "Dendro", "diona.jpg", "../pages/element.html?id=2"),
-  new personaje("Diluc", "The Dark Side of Dawn","5 star", "Dendro", "diluc.jpg", "../pages/element.html?id=2"),
-  new personaje("Cyno", "Judicator of Secrets","5 star", "Dendro", "cyno.jpg", "../pages/element.html?id=2"),
-  new personaje("Dori", "Treasure of Dream Garden","5 star", "Dendro", "dori.jpg", "../pages/element.html?id=2"),
-  new personaje("Nahida", "Physic of Purity","5 star", "Dendro", "nahida.jpg", "../pages/element.html?id=2"),
-  new personaje("Alhaitham", "Admonishing Instruction","5 star", "Dendro", "alhaitham.jpg", "../pages/element.html?id=2")
-];
+  this.getImageURL = function(){
+    return "https://genshin.jmp.blue/characters/" + this.id + "/card"
+  }
+}
 
 
 let aProfile = document.getElementById("profile")
 
 aProfile.addEventListener("click", (e) => {
-  const params = new URLSearchParams(window.location.search);
-  const id = params.get("id");
   e.preventDefault()
-  window.location.href = "profile.html?id=" + id
+  window.location.href = "profile.html"
 })
 
+async function obtenerPersonajes(){
+  try {
+    let respuesta = await fetch("https://genshin.jmp.blue/characters/")
+    let personajes = await respuesta.json()
+    let personajesParse = []
+    for(let i=0; i < 15; i++ ){
+      let personaje = await obtenerDetallePersonaje(personajes[i])
+      personajesParse.push(new Personaje(personajes[i], personaje.name, personaje.title, personaje.rarity, personaje.vision))
+    }
+
+    renderizarPersonajes(personajesParse)
+    
+  }catch(error) {
+    console.error(error)
+  }
+}
+
+async function obtenerDetallePersonaje(id){
+  try {
+      let respuestaIndividual = await fetch("https://genshin.jmp.blue/characters/" + id)
+      let personaje = await respuestaIndividual.json()
+      return personaje
+  } catch(error){
+    console.error(error)
+  }
+}
 
 function renderizarPersonajes(personajes){
 
@@ -76,23 +81,31 @@ function renderizarPersonajes(personajes){
     let cardButtons = document.createElement("div")
     let buttonFavorite = document.createElement("button")
     let buttonDetails = document.createElement("button")
-
-    characterImage.src =  "../assets/main/" + personajes[i].imagen
+    characterImage.src =  personajes[i].getImageURL()
     cardName.textContent = personajes[i].nombre
     cardName.className = "name"
     cardNickname.textContent = personajes[i].titulo
     cardNickname.className = "nickname"
     buttonFavorite.textContent = "Add to favorites"
     buttonFavorite.className = "favorite-card"
-    buttonFavorite.id = i
+    buttonFavorite.id = personajes[i].id
     buttonDetails.textContent = "See details"
     buttonDetails.className = "details-card"
-    buttonDetails.id = i
+    buttonDetails.id = personajes[i].id
 
 
-    buttonFavorite.addEventListener("click", (e) => {
+    buttonFavorite.addEventListener("click", async (e) => {
       e.preventDefault()
-      window.location.href = "favorites.html?id=" + buttonFavorite.id
+      let infoPerfil = JSON.parse(localStorage.getItem("usuarioLogueado"))
+      const existePersonaje = infoPerfil.favorites.find((personaje) => personaje.id === buttonFavorite.id)
+      if(existePersonaje){
+        alert("Personaje agregado anteriormente a favoritos")
+      }else{
+        let personaje = await obtenerDetallePersonaje(buttonFavorite.id)
+        infoPerfil.favorites.push(new Personaje(buttonFavorite.id, personaje.name, personaje.title, personaje.rarity, personaje.vision))
+        localStorage.setItem("usuarioLogueado", JSON.stringify(infoPerfil))
+        alert("Nuevo personaje añadido a favoritos!")
+      }
     })
 
     buttonDetails.addEventListener("click", (e) => {
@@ -121,7 +134,7 @@ function renderizarPersonajes(personajes){
   }
 }
 
-renderizarPersonajes(personajes)
+obtenerPersonajes()
 
 
 let signOut = document.querySelector(".sign-out")
