@@ -103,7 +103,11 @@ function renderizarPersonajes(personajes){
       }else{
         let personaje = await obtenerDetallePersonaje(buttonFavorite.id)
         infoPerfil.favorites.push(new Personaje(buttonFavorite.id, personaje.name, personaje.title, personaje.rarity, personaje.vision))
+        let usuarios = JSON.parse(localStorage.getItem("usuarios"))
+        let indexUsuarioLogueado = usuarios.findIndex((usuario) => usuario.username === infoPerfil.username)
+        usuarios[indexUsuarioLogueado].favorites.push(new Personaje(buttonFavorite.id, personaje.name, personaje.title, personaje.rarity, personaje.vision))
         localStorage.setItem("usuarioLogueado", JSON.stringify(infoPerfil))
+        localStorage.setItem("usuarios", JSON.stringify(usuarios))
         alert("Nuevo personaje añadido a favoritos!")
       }
     })
