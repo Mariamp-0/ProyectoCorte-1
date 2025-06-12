@@ -11,12 +11,13 @@ function changeImage(){
 changeImage()
 
 //Constructor de personajes
-function Personaje(nombre, rareza, vision, imagen, detalleUrl) {
+function Personaje(nombre, rareza, vision, imagen, detalleUrl,borrar) {
   this.nombre = nombre;
   this.rareza = rareza;
   this.vision = vision;
   this.imagen = imagen;
   this.detalleUrl = detalleUrl;
+  this.borrar = borrar
 }
 
 //Dummy
@@ -52,6 +53,7 @@ if (seccionFavoritos) {
             <p>${p.rareza}</p>
             <p>${p.vision}</p>
             <a href="${p.detalleUrl}" class="detalle-link">See details</a>
+            <button class="btn_eliminar">Remove</button>
           </div>
         </div>
       `;
