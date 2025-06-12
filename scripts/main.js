@@ -3,6 +3,13 @@ if (localStorage.getItem("usuarioLogueado") === null) {
   window.location.href = "login.html"
 }
 
+function changeImage(){
+    let infoPerfil = JSON.parse(localStorage.getItem("usuarioLogueado"))
+    let image = document.getElementById("imageNavbar")
+    image.src = "../assets/profile-images/"+infoPerfil.image+"-small.png"
+}
+changeImage()
+
 function Player(username, email, password, favorites){
     this.username = username;
     this.email = email;

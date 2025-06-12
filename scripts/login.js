@@ -1,10 +1,10 @@
 
-
-function Player(username, email, password, favorites) {
-  this.username = username;
-  this.email = email;
-  this.password = password;
-  this.favorites = favorites;
+function Player(username, email, password, favorites, image){
+    this.username = username;
+    this.email = email;
+    this.password = password;
+    this.favorites = favorites;
+    this.image = image
 }
 
 function Personaje(nombre, rareza, vision, imagen, detalleUrl) {

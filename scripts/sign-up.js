@@ -1,8 +1,9 @@
-function Player(username, email, password, favorites){
+function Player(username, email, password, favorites, image){
     this.username = username;
     this.email = email;
     this.password = password;
     this.favorites = favorites;
+    this.image = image
 }
 
 function Personaje(nombre, rareza, vision, imagen, detalleUrl) {
@@ -15,6 +16,10 @@ function Personaje(nombre, rareza, vision, imagen, detalleUrl) {
 
 const signupForm = document.getElementById("signupForm")
 
+function randomImage(){
+  let position = Math.floor(Math.random() * 7)
+  return position
+}
 function registrarUsuario(e){
     e.preventDefault()
     const id = document.getElementById("username").value
@@ -42,7 +47,7 @@ function registrarUsuario(e){
         return
     }
 
-    usuariosParse.push(new Player(id, email, password, []))
+    usuariosParse.push(new Player(id, email, password, [], randomImage()))
     localStorage.setItem("usuarios", JSON.stringify(usuariosParse))
    
     alert("Usuario creado con éxito!!!")

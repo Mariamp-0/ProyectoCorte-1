@@ -3,14 +3,22 @@ if (localStorage.getItem("usuarioLogueado") === null) {
   window.location.href = "login.html"
 }
 
-function Player(username, email, password, favorites){
+function changeImage(){
+    let infoPerfil = JSON.parse(localStorage.getItem("usuarioLogueado"))
+    let image = document.getElementById("imageNavbar")
+    image.src = "../assets/profile-images/"+infoPerfil.image+"-small.png"
+}
+
+changeImage()
+function Player(username, email, password, favorites, image){
     this.username = username;
     this.email = email;
     this.password = password;
     this.favorites = favorites;
+    this.image = image
 }
 
-function personaje(nombre,titulo, rareza, vision, imagen, detalleUrl) {
+function Personaje(nombre,titulo, rareza, vision, imagen, detalleUrl) {
   this.nombre = nombre;
   this.rareza = rareza;
   this.titulo = titulo;
@@ -19,31 +27,20 @@ function personaje(nombre,titulo, rareza, vision, imagen, detalleUrl) {
   this.detalleUrl = detalleUrl;
 }
 
-const personajesFavoritos = [
-  new personaje("Albedo", "Kreideprinz" ,"5 star", "Pyro", "albedo.png", "../pages/element.html?id=1"),
-  new personaje("Kaeya", "Frostwind Swordsman","5 star", "Dendro", "kaeya.jpg", "../pages/element.html?id=2"),
-  new personaje("Jean", "Dandelion Knight", "5 star", "Electro", "jean.jpg", "../pages/element.html?id=3"),
-  new personaje("Zhongli", "Vago Mundo", "5 star", "Hydro", "zhongli.jpeg", "../pages/element.html?id=4"),
-];
-
-let players = []
-
-players.push(new Player("Cata123", "cata@gmail.com", "000", personajesFavoritos))
-players.push(new Player("Maria456", "maria@gmail.com", "111", personajesFavoritos))
-
 function renderizarProfile() {
 
-    const params = new URLSearchParams(window.location.search);
-    const id = params.get("id");
+    let infoPerfil = JSON.parse(localStorage.getItem("usuarioLogueado"))
     let usernameLeft = document.getElementById("usernameLeft")
     let amountFavorites = document.getElementById("amountFavorites")
     let username = document.getElementById("username")
     let email = document.getElementById("email")
+    let image = document.getElementById("image")
 
-    usernameLeft.innerText = players[id].username
-    amountFavorites.innerText = players[id].favorites.length
-    username.innerText = players[id].username
-    email.innerText = players[id].email
+    image.src = "../assets/profile-images/"+infoPerfil.image+".jpg"
+    amountFavorites.innerText = infoPerfil.favorites.length
+    username.innerText = infoPerfil.username
+    usernameLeft.innerText = "@"+ infoPerfil.username
+    email.innerText = infoPerfil.email
 }
 
 renderizarProfile()
