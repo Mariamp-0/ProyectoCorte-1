@@ -60,11 +60,16 @@ let resetBtn = document.querySelector(".reset-btn")
 
 resetBtn.addEventListener("click", (e) => {
     e.preventDefault()
-    const params = new URLSearchParams(window.location.search);
-    const id = params.get("id");
+    let usuarios = JSON.parse(localStorage.getItem("usuarios"))
+    let usuarioLogueado = JSON.parse(localStorage.getItem("usuarioLogueado"))
+    let indexUsuarioLogueado = usuarios.findIndex((usuario) => usuario.username === usuarioLogueado.username)
 
     let newPassword = document.querySelector(".new-password").value
-    players[id].password = newPassword
+    usuarioLogueado.password = newPassword
+    usuarios[indexUsuarioLogueado].password = newPassword
+
+    localStorage.setItem("usuarios", JSON.stringify(usuarios))
+    localStorage.setItem("usuarioLogueado", JSON.stringify(usuarioLogueado))
 
     alert("Contraseña cambiada exitosamente!")
     
