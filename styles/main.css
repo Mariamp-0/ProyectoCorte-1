@@ -174,6 +174,41 @@ header{
     padding-left: 4%;
     padding-top: 10%;
 }
+.searchBarra{
+    width: 30%;
+    padding: 8px;
+    border-radius: 15px;
+    padding-left: 20px;
+    outline: none;
+    border: none;
+    background-color: #f7edcf;
+    font: bold 13px Montserrat;
+}
+.search-btn{
+    font-size: 15px;
+    font-family: "Montserrat";
+    width: 100px;
+    height: 35px;
+    background-color: #e47559;
+    border-radius: 25px;
+    border: none;
+    color: white;
+    font-weight: 500;
+}
+.search-btn:hover{
+    margin-left: 20px;
+    font-size: 15px;
+    font-family: "Montserrat";
+    width: 100px;
+    height: 35px;
+    background-color: #d66245;
+    border-radius: 25px;
+    border: none;
+    color: white;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgb(165, 163, 163);
+}
 .characters{
     width: 100%;
 }
