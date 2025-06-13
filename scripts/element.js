@@ -126,14 +126,16 @@ if (personaje) {
 
   if (habilidadesContenedor) {
     habilidadesContenedor.innerHTML = "";
-    personaje.habilidades.forEach(habilidad => {
+
+    imgHabilidades = ["burst","na","passive-0","skill"]
+    imgHabilidades.forEach(habilidad => {
 
       const div = document.createElement("div");
 
       div.className = "ability";
       div.innerHTML = `
-        <img src="${habilidad.imagen}" alt="${habilidad.tipo}">
-        <p>${habilidad.tipo}</p>
+        <img src=${"https://genshin.jmp.blue/characters/" + id + "/talent-" + habilidad} alt="${habilidad}">
+        <p>${habilidad}</p>
       `;
       habilidadesContenedor.appendChild(div);
 
