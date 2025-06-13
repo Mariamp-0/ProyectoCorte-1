@@ -11,70 +11,119 @@ function changeImage(){
 changeImage()
 
 //Constructor de personajes
-function Personaje(nombre, rareza, vision, imagen, detalleUrl) {
+
+function Personaje(nombre, rareza, vision, imagen, detalleUrl, borrar, id) {
   this.nombre = nombre;
   this.rareza = rareza;
   this.vision = vision;
   this.imagen = imagen;
   this.detalleUrl = detalleUrl;
+  this.borrar = borrar;
+  this.id = id;
+
 }
 
-//Dummy
+//Información del usuario desde local storage
 
-const personajesFavoritos = [
-  new Personaje("Hu Tao", "5 star", "Pyro", "../assets/favorites/icon-hutao.jpg", "../pages/element.html"),
-  new Personaje("Alhaitham", "5 star", "Dendro", "../assets/favorites/alhaitham-icon.jpg", "../pages/element.html"),
-  new Personaje("Raiden Shogun", "5 star", "Electro", "../assets/favorites/raiden-icon.jpg", "../pages/element.html")
-];
+let usuarioLogueado = JSON.parse(localStorage.getItem("usuarioLogueado"));
+let usuarios = JSON.parse(localStorage.getItem("usuarios"))
 
-//Renderizado de favoritos
 
-const seccionFavoritos = document.querySelector(".favoritos");
-if (seccionFavoritos) {
+//Función para renderizar favoritos
+
+function renderizarFavoritos() {
+  const seccionFavoritos = document.querySelector(".favoritos");
+  if (!seccionFavoritos) return
+
+
+
   seccionFavoritos.innerHTML = '<div class="contenedor"></div>';
-  const contenedor = seccionFavoritos.querySelector(".contenedor")
-  
-  //Agrega tres personajes por fila y crea la tarjeta de personaje
-  for (let i = 0; i < personajesFavoritos.length; i += 3) {
-    const fila = document.createElement("div");
-    fila.className = "fila-superior"; 
-    
+  const contenedor = seccionFavoritos.querySelector(".contenedor");
 
-    const personajesFila = personajesFavoritos.slice(i, i + 3);
-    personajesFila.forEach(p => {
-      fila.innerHTML += `
-        <div class="personaje">
-          <div class="fondo-Img">
-            <div class="Img-contenedor">
-              <img src="${p.imagen}" alt="${p.nombre}">
+
+  const favoritos = usuarioLogueado.favorites
+
+
+//Traer la información desde la API
+
+  const promesas = favoritos.map(p => {
+
+    const url = `https://genshin.jmp.blue/characters/${p.id}`;
+    
+    return fetch(url)
+
+      .then(res => res.json())
+
+      .then(data => {
+        const imagen = `https://genshin.jmp.blue/characters/${p.id}/icon-big`
+
+        return new Personaje(
+          data.name,
+          data.rarity,
+          data.vision,
+          imagen,
+          "../pages/element.html",
+          false,
+          p.id )
+
+      })
+
+  })
+
+
+  Promise.all(promesas).then(personajes => {
+    personajes = personajes.filter(p => p !== null);
+
+
+    if (personajes.length === 0) {
+      contenedor.innerHTML = "<p>No se pudo cargar ningún personaje</p>"; //Si la lista del usuario esta vacia
+      return;
+    }
+
+
+    for (let i = 0; i < personajes.length; i += 3) {
+      const fila = document.createElement("div"); 
+      fila.className = "fila-superior";
+
+      
+      const filaPersonajes = personajes.slice(i, i + 3); //Tres personajes por fila
+      filaPersonajes.forEach(p => {
+        fila.innerHTML += `
+          <div class="personaje">
+            <div class="fondo-Img">
+              <div class="Img-contenedor">
+                <img src="${p.imagen}" alt="${p.nombre}">
+              </div>
+              <h3>${p.nombre}</h3>
+              <p>${p.rareza} star</p>
+              <p>${p.vision}</p>
+              <a href="${p.detalleUrl}" class="detalle-link" data-name="${p.nombre}">See details</a>
+              <button class="btn_eliminar" data-id="${p.id}">Remove</button>
             </div>
-            <h3>${p.nombre}</h3>
-            <p>${p.rareza}</p>
-            <p>${p.vision}</p>
-            <a href="${p.detalleUrl}" class="detalle-link">See details</a>
           </div>
-        </div>
-      `;
+        `
       });
-    contenedor.appendChild(fila)
-  }
+
+      contenedor.appendChild(fila);
+    }
 
   // Añade eventListener para conectar cada tarjeta con el element.html que muestra su información respectiva
-  const enlaces = document.querySelectorAll('.personaje a');
 
-  enlaces.forEach((enlace, index) => {
-    enlace.addEventListener('click', function(e) {
-      e.preventDefault()
-      
-      const personaje = personajesFavoritos[index]
+    document.querySelectorAll(".detalle-link").forEach(enlace => {
+      enlace.addEventListener("click", function (e) {
+        e.preventDefault();
 
-      localStorage.setItem('nombrePersonaje', personaje.nombre)
+        const nombre = e.target.dataset.name;
+        localStorage.setItem("nombrePersonaje", nombre);
 
-      window.location.href = personaje.detalleUrl;
+        window.location.href = "../pages/element.html";
+      });
+    });
 
-    })
   });
+
 }
+
 
 let signOut = document.querySelector(".sign-out")
 
@@ -86,7 +135,4 @@ function cierreSesion(e){
 
 signOut.addEventListener("click", cierreSesion)
 
-
-      
-
-
+renderizarFavoritos();
