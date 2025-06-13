@@ -143,6 +143,26 @@ obtenerPersonajes()
 
 let signOut = document.querySelector(".sign-out")
 
+let searchButton = document.getElementById("busquedaboton")
+
+searchButton.addEventListener("click", async (e) => {
+  e.preventDefault()
+  let valorBuscado = document.getElementById("busquedainput").value
+  let charactersContainer = document.querySelector(".cards-container")
+  charactersContainer.innerHTML = ""
+  if(valorBuscado===""){
+    await obtenerPersonajes()
+  }else{
+  let personaje = await obtenerDetallePersonaje(valorBuscado)
+  let personajes = []
+  personajes.push(new Personaje(valorBuscado, personaje.name, personaje.title, personaje.rarity, personaje.vision))
+  renderizarPersonajes(personajes)
+
+  }
+
+})
+
+
 function cierreSesion(e){
   e.preventDefault()
   localStorage.removeItem("usuarioLogueado")
