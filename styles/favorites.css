@@ -228,6 +228,7 @@ a {
     position:relative;
 }
 
+
 .btn_eliminar {
     border: none;
     border-radius: 50px;
@@ -242,6 +243,5 @@ a {
     text-decoration: none;
     z-index: 1;
     position:relative;
-
 
 }
