@@ -166,7 +166,7 @@ searchButton.addEventListener("click", async (e) => {
 function cierreSesion(e){
   e.preventDefault()
   localStorage.removeItem("usuarioLogueado")
-  window.location.href = "landing.html"
+  window.location.href = "../landing.html"
 }
 
 signOut.addEventListener("click", cierreSesion)
