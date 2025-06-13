@@ -228,3 +228,20 @@ a {
     position:relative;
 }
 
+.btn_eliminar {
+    border: none;
+    border-radius: 50px;
+    width: 120px;
+    height: 150px;
+    margin: auto;
+    background-color: #ffd06b;
+    margin-top: 5px;
+    color: #212121;
+    font-weight: 600;
+    font-size: small;
+    text-decoration: none;
+    z-index: 1;
+    position:relative;
+
+
+}
