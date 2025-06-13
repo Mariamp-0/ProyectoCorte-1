@@ -73,6 +73,13 @@ function renderizarFavoritos() {
 
       })
 
+      .catch(error => {
+        console.error("Error al cargar información de la API", p.id, error); //Por si existe una falla con la API
+
+        return null
+
+      });
+
   })
 
 
