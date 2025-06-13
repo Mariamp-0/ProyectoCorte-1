@@ -119,6 +119,46 @@ function renderizarFavoritos() {
       contenedor.appendChild(fila);
     }
 
+     // Añade eventListener para conectar cada tarjeta con el element.html que muestra su información respectiva
+
+    document.querySelectorAll(".detalle-link").forEach(enlace => {
+      enlace.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        const nombre = e.target.dataset.name;
+        localStorage.setItem("nombrePersonaje", nombre);
+
+        window.location.href = "../pages/element.html";
+      });
+    });
+
+    //Añade un eventListener para eliminar el personaje de favoritos
+
+    document.querySelectorAll(".btn_eliminar").forEach(btn => {
+      btn.addEventListener("click", function (e) {
+        e.preventDefault();
+        let id = e.target.dataset.id;
+
+        // Elimina el personaje borrado del la lista del local storage
+        usuarioLogueado.favorites = usuarioLogueado.favorites.filter(p => p.id !== id);
+
+        let indexUsuario = usuarios.findIndex(u => u.username === usuarioLogueado.username)
+
+
+        if (indexUsuario !== -1) {
+          usuarios[indexUsuario].favorites = usuarioLogueado.favorites;
+          localStorage.setItem("usuarios", JSON.stringify(usuarios));
+        }
+
+        localStorage.setItem("usuarioLogueado", JSON.stringify(usuarioLogueado));
+
+        alert("Personaje eliminado de favoritos!");
+        renderizarFavoritos();
+      });
+
+    })
+
+
   // Añade eventListener para conectar cada tarjeta con el element.html que muestra su información respectiva
 
     document.querySelectorAll(".detalle-link").forEach(enlace => {
