@@ -43,6 +43,11 @@ function renderizarFavoritos() {
 
   const favoritos = usuarioLogueado.favorites
 
+  if (!favoritos || favoritos.length === 0) {
+    contenedor.innerHTML = "<p>No tienes personajes en favoritos</p>"; //Mensaje por si no existen favoritos en la lista
+    return;
+  }
+
 
 //Traer la información desde la API
 
@@ -85,7 +90,7 @@ function renderizarFavoritos() {
       const fila = document.createElement("div"); 
       fila.className = "fila-superior";
 
-      
+
       const filaPersonajes = personajes.slice(i, i + 3); //Tres personajes por fila
       filaPersonajes.forEach(p => {
         fila.innerHTML += `
