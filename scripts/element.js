@@ -29,76 +29,13 @@ function Personaje (nombre, descripcion, rareza, imagenSplash, imagenRetrato, ti
   this.imagenFondo = imagenFondo ;
 }
 
-//Dummy
-
-const personajes = [
-  new Personaje(
-    "Hu Tao",
-    "The 77th Director of the Wangsheng Funeral Parlor. She took over the business at a rather young age.",
-    "five star",
-    "../assets/element/Hu-tao-Splah.jpg",
-    "../assets/element/Hutao-portrait.jpg",
-    "Fragrance in Thaw",
-    "Pyro",
-    "Liyue",
-    "Polearm",
-    "Papilio Charontis",
-    "Funeraria Wangsheng",
-    "2021-03-02",
-    [
-      { imagen: "../assets/element/burst-hutao.jpg", tipo: "Burst" },
-      { imagen: "../assets/element/normal-hutao.jpg", tipo: "Normal" },
-      { imagen: "../assets/element/passive-hutao.jpg", tipo: "Passive" },
-      { imagen: "../assets/element/skill-hutao.jpg", tipo: "Skill" }
-    ]
-  ),
-  new Personaje(
-    "Alhaitham",
-    "The current scribe of the Sumeru Akademiya, a man endowed with extraodinary intelligence and talent. He lives free — free from the searching eyes of ordinary people, anyway.",
-    "five star",
-    "../assets/element/alhaitham-splash.jpg",
-    "../assets/element/alhaitham-portrait.jpg",
-    "Admonishing Instruction",
-    "Dendro",
-    "Sumeru",
-    "Sword",
-    "Vultur Volans",
-    "Akademiya de Sumeru",
-    "2023-01-18",
-    [
-      { imagen: "../assets/element/normal-alhaitham.jpg", tipo: "Normal" },
-      { imagen: "../assets/element/skill-alhaitham.jpg", tipo: "Skill" },
-      { imagen: "../assets/element/burst-alhaitham.jpg", tipo: "Burst" },
-      { imagen: "../assets/element/passive-alhaitham.jpg", tipo: "Passive" }
-    ]
-  ),
-  new Personaje(
-    "Raiden Shogun",
-    "Her Excellency, the Almighty, Narukami Ogosho, who promised the people of Inazuma an unchanging Eternity.",
-    "five star",
-    "../assets/element/raiden-splash.jpg",
-    "../assets/element/raiden-portrait.jpg",
-    "IPlane of Euthymia",
-    "Electro",
-    "Inazuma",
-    "Polearm",
-    "Imperatrix Umbrosa",
-    "Inazuma City",
-    "2021-09-01",
-    [
-      { imagen: "../assets/element/normal-raiden.jpg", tipo: "Normal" },
-      { imagen: "../assets/element/skill-raiden.jpg", tipo: "Skill" },
-      { imagen: "../assets/element/burst-raiden.jpg", tipo: "Burst" },
-      { imagen: "../assets/element/passive-raiden.jpg", tipo: "Passive" }
-    ]
-  ),
-  
-];
 
 
 //Filtrar el personaje para mostrar su información
 
-const nombreSeleccionado = localStorage.getItem ("nombrePersonaje");
+function renderizarElemento() {
+
+  const nombreSeleccionado = localStorage.getItem ("nombrePersonaje");
 const personaje = personajes.find(p => p.nombre === nombreSeleccionado);
 
 if (personaje) {
@@ -177,6 +114,9 @@ if (personaje) {
     });
   }
 }
+
+}
+
 
 
 let signOut = document.querySelector(".sign-out")
