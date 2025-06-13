@@ -11,13 +11,12 @@ function changeImage(){
 changeImage()
 
 //Constructor
-function Personaje (nombre, descripcion, rareza, imagenSplash, imagenRetrato, titulo, vision, nacion, 
-    arma, constelacion, afiliacion, lanzamiento, habilidades,imagenFondo) {
+
+function Personaje (nombre, descripcion, rareza, titulo, vision, nacion, 
+    arma, constelacion, afiliacion, lanzamiento) {
   this.nombre = nombre;
   this.descripcion = descripcion;
   this.rareza = rareza;
-  this.imagenSplash = imagenSplash;
-  this.imagenRetrato = imagenRetrato;
   this.titulo = titulo;
   this.vision = vision;
   this.nacion = nacion;
@@ -25,18 +24,44 @@ function Personaje (nombre, descripcion, rareza, imagenSplash, imagenRetrato, ti
   this.constelacion = constelacion;
   this.afiliacion = afiliacion;
   this.lanzamiento = lanzamiento;
-  this.habilidades = habilidades;
-  this.imagenFondo = imagenFondo ;
+
 }
 
 
+  async function obtenerDetallePersonaje(id){
+  try {
+      let respuestaIndividual = await fetch("https://genshin.jmp.blue/characters/" + id)
+      let personaje = await respuestaIndividual.json()
+      return personaje
+  } catch(error){
+    console.error(error)
+  }
+}
 
-//Filtrar el personaje para mostrar su información
 
-function renderizarElemento() {
+//Función para renderizar elemento del personaje
 
-  const nombreSeleccionado = localStorage.getItem ("nombrePersonaje");
-const personaje = personajes.find(p => p.nombre === nombreSeleccionado);
+async function renderizarElemento() {
+
+const params = new URLSearchParams(window.location.search);
+const id = params.get("id");
+
+let informacionApi = await obtenerDetallePersonaje(id) ;
+
+let personaje = new Personaje (
+  informacionApi.name,
+  informacionApi.description, 
+  informacionApi.rarity,
+  informacionApi.title,
+  informacionApi.vision,
+  informacionApi.nation,
+  informacionApi.weapon,
+  informacionApi.constellation,
+  informacionApi.affiliation,
+  informacionApi.release
+)
+
+
 
 if (personaje) {
   const titulo = document.querySelector(".personaje-general h1");
@@ -52,10 +77,9 @@ if (personaje) {
     estrellas.innerHTML = "";
     estrellas.append("Rarity:");
 
-    const rareza = personaje.rareza.toLowerCase();
-    const cantidadEstrellas = rareza === "five star" ? 5 : rareza === "four star" ? 4 : 0 //Muestra las estrellas , 4 o 5
+    const rareza = personaje.rareza;
 
-    for (let i = 0; i < cantidadEstrellas; i++) {
+    for (let i = 0; i < rareza; i++) {
       const estrella = document.createElement("i");
       estrella.className = "bx bxs-star";
       estrellas.appendChild(estrella);
@@ -66,13 +90,15 @@ if (personaje) {
 
   const imgSplash = document.querySelector(".img-personaje");
   if (imgSplash) {
-    imgSplash.src = personaje.imagenSplash;
+    imgSplash.src = "https://genshin.jmp.blue/characters/" + id + "/gacha-splash";
     imgSplash.alt = personaje.nombre;
   }
 
+  
+
   const imgRetrato = document.querySelector(".personaje-portrait img");
   if (imgRetrato) {
-    imgRetrato.src = personaje.imagenRetrato;
+    imgRetrato.src = "https://genshin.jmp.blue/characters/" + id + "/portrait";
     imgRetrato.alt = `${personaje.nombre} retrato`;
   }
 
@@ -117,7 +143,7 @@ if (personaje) {
 
 }
 
-
+renderizarElemento();
 
 let signOut = document.querySelector(".sign-out")
 
