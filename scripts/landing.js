@@ -7,10 +7,10 @@ function Author(image, name, location, profession, field){
 }
 let authors = []
 
-authors.push(new Author("../assets/landing/user1.jpeg", "Catalina Núñez", "Cali, Colombia",
+authors.push(new Author("assets/landing/user1.jpeg", "Catalina Núñez", "Cali, Colombia",
 "Interaction Media Designer", "Design and Programming"))
 
-authors.push(new Author("../assets/landing/user2.jpeg", "Maria Paula Mejía", "Cali, Colombia",
+authors.push(new Author("assets/landing/user2.jpeg", "Maria Paula Mejía", "Cali, Colombia",
 "Interaction Media Designer", "Design and Programming"))
 
 let aboutUs = document.querySelector(".info-about-us")
@@ -74,12 +74,12 @@ let enviarButton = document.querySelector(".enviar-btn")
 
 joinNowButton.addEventListener("click", (e) => {
     e.preventDefault()
-    window.location.href = "login.html"
+    window.location.href = "pages/login.html"
 })
 
 loginButton.addEventListener("click", (e) => {
     e.preventDefault()
-    window.location.href = "login.html"
+    window.location.href = "pages/login.html"
 })
 
 enviarButton.addEventListener("click", saveComments)

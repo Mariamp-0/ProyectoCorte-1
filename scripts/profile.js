@@ -51,7 +51,7 @@ let signOut = document.querySelector(".sign-out")
 function cierreSesion(e){
   e.preventDefault()
   localStorage.removeItem("usuarioLogueado")
-  window.location.href = "landing.html"
+  window.location.href = "../landing.html"
 }
 
 signOut.addEventListener("click", cierreSesion)
