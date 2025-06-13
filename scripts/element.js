@@ -11,13 +11,12 @@ function changeImage(){
 changeImage()
 
 //Constructor
-function Personaje (nombre, descripcion, rareza, imagenSplash, imagenRetrato, titulo, vision, nacion, 
-    arma, constelacion, afiliacion, lanzamiento, habilidades,imagenFondo) {
+
+function Personaje (nombre, descripcion, rareza, titulo, vision, nacion, 
+    arma, constelacion, afiliacion, lanzamiento) {
   this.nombre = nombre;
   this.descripcion = descripcion;
   this.rareza = rareza;
-  this.imagenSplash = imagenSplash;
-  this.imagenRetrato = imagenRetrato;
   this.titulo = titulo;
   this.vision = vision;
   this.nacion = nacion;
@@ -25,81 +24,44 @@ function Personaje (nombre, descripcion, rareza, imagenSplash, imagenRetrato, ti
   this.constelacion = constelacion;
   this.afiliacion = afiliacion;
   this.lanzamiento = lanzamiento;
-  this.habilidades = habilidades;
-  this.imagenFondo = imagenFondo ;
+
 }
 
-//Dummy
 
-const personajes = [
-  new Personaje(
-    "Hu Tao",
-    "The 77th Director of the Wangsheng Funeral Parlor. She took over the business at a rather young age.",
-    "five star",
-    "../assets/element/Hu-tao-Splah.jpg",
-    "../assets/element/Hutao-portrait.jpg",
-    "Fragrance in Thaw",
-    "Pyro",
-    "Liyue",
-    "Polearm",
-    "Papilio Charontis",
-    "Funeraria Wangsheng",
-    "2021-03-02",
-    [
-      { imagen: "../assets/element/burst-hutao.jpg", tipo: "Burst" },
-      { imagen: "../assets/element/normal-hutao.jpg", tipo: "Normal" },
-      { imagen: "../assets/element/passive-hutao.jpg", tipo: "Passive" },
-      { imagen: "../assets/element/skill-hutao.jpg", tipo: "Skill" }
-    ]
-  ),
-  new Personaje(
-    "Alhaitham",
-    "The current scribe of the Sumeru Akademiya, a man endowed with extraodinary intelligence and talent. He lives free — free from the searching eyes of ordinary people, anyway.",
-    "five star",
-    "../assets/element/alhaitham-splash.jpg",
-    "../assets/element/alhaitham-portrait.jpg",
-    "Admonishing Instruction",
-    "Dendro",
-    "Sumeru",
-    "Sword",
-    "Vultur Volans",
-    "Akademiya de Sumeru",
-    "2023-01-18",
-    [
-      { imagen: "../assets/element/normal-alhaitham.jpg", tipo: "Normal" },
-      { imagen: "../assets/element/skill-alhaitham.jpg", tipo: "Skill" },
-      { imagen: "../assets/element/burst-alhaitham.jpg", tipo: "Burst" },
-      { imagen: "../assets/element/passive-alhaitham.jpg", tipo: "Passive" }
-    ]
-  ),
-  new Personaje(
-    "Raiden Shogun",
-    "Her Excellency, the Almighty, Narukami Ogosho, who promised the people of Inazuma an unchanging Eternity.",
-    "five star",
-    "../assets/element/raiden-splash.jpg",
-    "../assets/element/raiden-portrait.jpg",
-    "IPlane of Euthymia",
-    "Electro",
-    "Inazuma",
-    "Polearm",
-    "Imperatrix Umbrosa",
-    "Inazuma City",
-    "2021-09-01",
-    [
-      { imagen: "../assets/element/normal-raiden.jpg", tipo: "Normal" },
-      { imagen: "../assets/element/skill-raiden.jpg", tipo: "Skill" },
-      { imagen: "../assets/element/burst-raiden.jpg", tipo: "Burst" },
-      { imagen: "../assets/element/passive-raiden.jpg", tipo: "Passive" }
-    ]
-  ),
-  
-];
+  async function obtenerDetallePersonaje(id){
+  try {
+      let respuestaIndividual = await fetch("https://genshin.jmp.blue/characters/" + id)
+      let personaje = await respuestaIndividual.json()
+      return personaje
+  } catch(error){
+    console.error(error)
+  }
+}
 
 
-//Filtrar el personaje para mostrar su información
+//Función para renderizar elemento del personaje
 
-const nombreSeleccionado = localStorage.getItem ("nombrePersonaje");
-const personaje = personajes.find(p => p.nombre === nombreSeleccionado);
+async function renderizarElemento() {
+
+const params = new URLSearchParams(window.location.search);
+const id = params.get("id");
+
+let informacionApi = await obtenerDetallePersonaje(id) ;
+
+let personaje = new Personaje (
+  informacionApi.name,
+  informacionApi.description, 
+  informacionApi.rarity,
+  informacionApi.title,
+  informacionApi.vision,
+  informacionApi.nation,
+  informacionApi.weapon,
+  informacionApi.constellation,
+  informacionApi.affiliation,
+  informacionApi.release
+)
+
+
 
 if (personaje) {
   const titulo = document.querySelector(".personaje-general h1");
@@ -115,10 +77,9 @@ if (personaje) {
     estrellas.innerHTML = "";
     estrellas.append("Rarity:");
 
-    const rareza = personaje.rareza.toLowerCase();
-    const cantidadEstrellas = rareza === "five star" ? 5 : rareza === "four star" ? 4 : 0 //Muestra las estrellas , 4 o 5
+    const rareza = personaje.rareza;
 
-    for (let i = 0; i < cantidadEstrellas; i++) {
+    for (let i = 0; i < rareza; i++) {
       const estrella = document.createElement("i");
       estrella.className = "bx bxs-star";
       estrellas.appendChild(estrella);
@@ -129,13 +90,15 @@ if (personaje) {
 
   const imgSplash = document.querySelector(".img-personaje");
   if (imgSplash) {
-    imgSplash.src = personaje.imagenSplash;
+    imgSplash.src = "https://genshin.jmp.blue/characters/" + id + "/gacha-splash";
     imgSplash.alt = personaje.nombre;
   }
 
+  
+
   const imgRetrato = document.querySelector(".personaje-portrait img");
   if (imgRetrato) {
-    imgRetrato.src = personaje.imagenRetrato;
+    imgRetrato.src = "https://genshin.jmp.blue/characters/" + id + "/portrait";
     imgRetrato.alt = `${personaje.nombre} retrato`;
   }
 
@@ -163,14 +126,16 @@ if (personaje) {
 
   if (habilidadesContenedor) {
     habilidadesContenedor.innerHTML = "";
-    personaje.habilidades.forEach(habilidad => {
+
+    imgHabilidades = ["burst","na","passive-0","skill"]
+    imgHabilidades.forEach(habilidad => {
 
       const div = document.createElement("div");
 
       div.className = "ability";
       div.innerHTML = `
-        <img src="${habilidad.imagen}" alt="${habilidad.tipo}">
-        <p>${habilidad.tipo}</p>
+        <img src=${"https://genshin.jmp.blue/characters/" + id + "/talent-" + habilidad} alt="${habilidad}">
+        <p>${habilidad}</p>
       `;
       habilidadesContenedor.appendChild(div);
 
@@ -178,6 +143,9 @@ if (personaje) {
   }
 }
 
+}
+
+renderizarElemento();
 
 let signOut = document.querySelector(".sign-out")
 

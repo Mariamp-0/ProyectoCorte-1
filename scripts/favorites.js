@@ -109,7 +109,7 @@ function renderizarFavoritos() {
               <h3>${p.nombre}</h3>
               <p>${p.rareza} star</p>
               <p>${p.vision}</p>
-              <a href="${p.detalleUrl}" class="detalle-link" data-name="${p.nombre}">See details</a>
+              <a class="detalle-link" id="${p.id}" data-id="${p.id}">See details</a>
               <button class="btn_eliminar" data-id="${p.id}">Remove</button>
             </div>
           </div>
@@ -121,16 +121,13 @@ function renderizarFavoritos() {
 
      // Añade eventListener para conectar cada tarjeta con el element.html que muestra su información respectiva
 
-    document.querySelectorAll(".detalle-link").forEach(enlace => {
-      enlace.addEventListener("click", function (e) {
-        e.preventDefault();
-
-        const nombre = e.target.dataset.name;
-        localStorage.setItem("nombrePersonaje", nombre);
-
-        window.location.href = "../pages/element.html";
-      });
-    });
+  document.querySelectorAll(".detalle-link").forEach(function(enlace) {
+  enlace.addEventListener("click", function (e) {
+    e.preventDefault();
+    console.log(this.id);
+    window.location.href = "element.html?id=" + this.id;
+  });
+});
 
     //Añade un eventListener para eliminar el personaje de favoritos
 
@@ -161,18 +158,17 @@ function renderizarFavoritos() {
 
   // Añade eventListener para conectar cada tarjeta con el element.html que muestra su información respectiva
 
-    document.querySelectorAll(".detalle-link").forEach(enlace => {
-      enlace.addEventListener("click", function (e) {
-        e.preventDefault();
-
-        const nombre = e.target.dataset.name;
-        localStorage.setItem("nombrePersonaje", nombre);
-
-        window.location.href = "../pages/element.html";
-      });
-    });
-
+    document.querySelectorAll(".detalle-link").forEach(function(enlace) {
+  enlace.addEventListener("click", function (e) {
+    e.preventDefault();
+    var id = this.getAttribute("data-id");
+    console.log(id);
+    window.location.href = "../pages/element.html?id=" + id;
   });
+});
+
+
+});
 
 }
 
